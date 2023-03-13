@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1678358684433" TestSessionContainerId="c3dde2fc-bd7a-431c-97a6-3e2c8d32620b" version="1.0">
+    <SrcFileList>
+        <SrcFile Content="&#13;&#10;public class Lampadina {&#13;&#10;&#9;&#13;&#10;&#9;boolean accesa = false;&#13;&#10;&#9;&#13;&#10;&#9;// setta il voltaggio, accende o spegne la lampadina&#13;&#10;&#9;// restituisce true se lo stato cambia&#13;&#10;&#9;boolean setVoltes(float volt) {&#13;&#10;&#9;&#9;if(!accesa &amp;&amp; (volt &lt;= 13 || volt &gt;= 11)) {&#13;&#10;&#9;&#9;&#9;accesa = true;&#13;&#10;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;if(accesa &amp;&amp; volt &lt;= 2) {&#13;&#10;&#9;&#9;&#9;accesa = false;&#13;&#10;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;return false;&#13;&#10;&#9;}&#13;&#10;&#13;&#10;}&#13;&#10;" Filename="Lampadina.java" Intrnl_Id="1"/>
+    </SrcFileList>
+    <CritList>
+        <CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+    </CritList>
+    <BoolOpList>
+        <BoolOp Arity="2" Intrnl_Id="2" Name="conditional and (&amp;&amp;)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="02" Value="false"/>
+                <MapEntry BoolAssgnmnt="10" Value="false"/>
+                <MapEntry BoolAssgnmnt="11" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+        <BoolOp Arity="2" Intrnl_Id="3" Name="conditional or (||)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="00" Value="false"/>
+                <MapEntry BoolAssgnmnt="01" Value="true"/>
+                <MapEntry BoolAssgnmnt="12" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+        <BoolOp Arity="1" Intrnl_Id="4" Name="not (!)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="1" Value="false"/>
+                <MapEntry BoolAssgnmnt="0" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+    </BoolOpList>
+    <HierarchyLvlTypeList>
+        <HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="5"/>
+        <HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="6"/>
+        <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="7"/>
+    </HierarchyLvlTypeList>
+    <MASTRoot>
+        <HierarchyLvl HierarchyLvlId="51" HierarchyLvlTypeId="7" Intrnl_Id="8" Name="default package">
+            <Header/>
+            <LocList/>
+            <HierarchyLvl HierarchyLvlId="50" HierarchyLvlTypeId="6" Intrnl_Id="9" Name="Lampadina">
+                <Header>
+                    <Loc EndOffset="24" SrcFileId="1" StartOffset="2"/>
+                </Header>
+                <LocList>
+                    <Loc EndOffset="373" SrcFileId="1" StartOffset="2"/>
+                </LocList>
+                <StmntSeq Intrnl_Id="10">
+                    <LocList>
+                        <Loc EndOffset="55" SrcFileId="1" StartOffset="32"/>
+                    </LocList>
+                    <BasicStmnt CovItemId="S1" CovItemPrefix="Lampadina.java" Intrnl_Id="11">
+                        <LocList>
+                            <Loc EndOffset="55" SrcFileId="1" StartOffset="32"/>
+                        </LocList>
+                    </BasicStmnt>
+                </StmntSeq>
+                <HierarchyLvl HierarchyLvlId="49" HierarchyLvlTypeId="5" Intrnl_Id="12" Name="setVoltes">
+                    <Header>
+                        <Loc EndOffset="186" SrcFileId="1" StartOffset="157"/>
+                    </Header>
+                    <LocList>
+                        <Loc EndOffset="368" SrcFileId="1" StartOffset="157"/>
+                    </LocList>
+                    <StmntSeq Intrnl_Id="13">
+                        <LocList>
+                            <Loc EndOffset="276" SrcFileId="1" StartOffset="192"/>
+                            <Loc EndOffset="347" SrcFileId="1" StartOffset="280"/>
+                            <Loc EndOffset="364" SrcFileId="1" StartOffset="351"/>
+                        </LocList>
+                        <CondStmnt CovItemId="S2" CovItemPrefix="Lampadina.java" Intrnl_Id="14">
+                            <Branch CovItemId="B1" CovItemPrefix="Lampadina.java" Implct="false" Intrnl_Id="15">
+                                <Cond/>
+                                <LocList>
+                                    <Loc EndOffset="276" SrcFileId="1" StartOffset="234"/>
+                                </LocList>
+                                <StmntSeq Intrnl_Id="16">
+                                    <LocList>
+                                        <Loc EndOffset="254" SrcFileId="1" StartOffset="240"/>
+                                        <Loc EndOffset="271" SrcFileId="1" StartOffset="259"/>
+                                    </LocList>
+                                    <BasicStmnt CovItemId="S3" CovItemPrefix="Lampadina.java" Intrnl_Id="17">
+                                        <LocList>
+                                            <Loc EndOffset="254" SrcFileId="1" StartOffset="240"/>
+                                        </LocList>
+                                    </BasicStmnt>
+                                    <BasicStmnt CovItemId="S4" CovItemPrefix="Lampadina.java" Intrnl_Id="18">
+                                        <LocList>
+                                            <Loc EndOffset="271" SrcFileId="1" StartOffset="259"/>
+                                        </LocList>
+                                    </BasicStmnt>
+                                </StmntSeq>
+                            </Branch>
+                            <Branch CovItemId="B2" CovItemPrefix="Lampadina.java" Implct="true" Intrnl_Id="19">
+                                <Cond/>
+                                <LocList/>
+                                <StmntSeq Intrnl_Id="20">
+                                    <LocList/>
+                                </StmntSeq>
+                            </Branch>
+                            <Keyword EndOffset="194" SrcFileId="1" StartOffset="192"/>
+                            <LocList>
+                                <Loc EndOffset="276" SrcFileId="1" StartOffset="192"/>
+                            </LocList>
+                            <RootTerm CovItemId="C1" CovItemPrefix="Lampadina.java" Intrnl_Id="21">
+                                <OpTerm BooleanOpId="2" Intrnl_Id="22">
+                                    <OpTerm BooleanOpId="4" Intrnl_Id="23">
+                                        <BasicBoolTerm Intrnl_Id="24">
+                                            <LocList>
+                                                <Loc EndOffset="202" SrcFileId="1" StartOffset="196"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="196" SrcFileId="1" StartOffset="195"/>
+                                        </LocList>
+                                    </OpTerm>
+                                    <OpTerm BooleanOpId="3" Intrnl_Id="25">
+                                        <BasicBoolTerm Intrnl_Id="26">
+                                            <LocList>
+                                                <Loc EndOffset="217" SrcFileId="1" StartOffset="207"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <BasicBoolTerm Intrnl_Id="27">
+                                            <LocList>
+                                                <Loc EndOffset="231" SrcFileId="1" StartOffset="221"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="220" SrcFileId="1" StartOffset="218"/>
+                                        </LocList>
+                                    </OpTerm>
+                                    <LocList>
+                                        <Loc EndOffset="205" SrcFileId="1" StartOffset="203"/>
+                                    </LocList>
+                                </OpTerm>
+                            </RootTerm>
+                        </CondStmnt>
+                        <CondStmnt CovItemId="S5" CovItemPrefix="Lampadina.java" Intrnl_Id="28">
+                            <Branch CovItemId="B3" CovItemPrefix="Lampadina.java" Implct="false" Intrnl_Id="29">
+                                <Cond/>
+                                <LocList>
+                                    <Loc EndOffset="347" SrcFileId="1" StartOffset="304"/>
+                                </LocList>
+                                <StmntSeq Intrnl_Id="30">
+                                    <LocList>
+                                        <Loc EndOffset="325" SrcFileId="1" StartOffset="310"/>
+                                        <Loc EndOffset="342" SrcFileId="1" StartOffset="330"/>
+                                    </LocList>
+                                    <BasicStmnt CovItemId="S6" CovItemPrefix="Lampadina.java" Intrnl_Id="31">
+                                        <LocList>
+                                            <Loc EndOffset="325" SrcFileId="1" StartOffset="310"/>
+                                        </LocList>
+                                    </BasicStmnt>
+                                    <BasicStmnt CovItemId="S7" CovItemPrefix="Lampadina.java" Intrnl_Id="32">
+                                        <LocList>
+                                            <Loc EndOffset="342" SrcFileId="1" StartOffset="330"/>
+                                        </LocList>
+                                    </BasicStmnt>
+                                </StmntSeq>
+                            </Branch>
+                            <Branch CovItemId="B4" CovItemPrefix="Lampadina.java" Implct="true" Intrnl_Id="33">
+                                <Cond/>
+                                <LocList/>
+                                <StmntSeq Intrnl_Id="34">
+                                    <LocList/>
+                                </StmntSeq>
+                            </Branch>
+                            <Keyword EndOffset="282" SrcFileId="1" StartOffset="280"/>
+                            <LocList>
+                                <Loc EndOffset="347" SrcFileId="1" StartOffset="280"/>
+                            </LocList>
+                            <RootTerm CovItemId="C2" CovItemPrefix="Lampadina.java" Intrnl_Id="35">
+                                <OpTerm BooleanOpId="2" Intrnl_Id="36">
+                                    <BasicBoolTerm Intrnl_Id="37">
+                                        <LocList>
+                                            <Loc EndOffset="289" SrcFileId="1" StartOffset="283"/>
+                                        </LocList>
+                                    </BasicBoolTerm>
+                                    <BasicBoolTerm Intrnl_Id="38">
+                                        <LocList>
+                                            <Loc EndOffset="302" SrcFileId="1" StartOffset="293"/>
+                                        </LocList>
+                                    </BasicBoolTerm>
+                                    <LocList>
+                                        <Loc EndOffset="292" SrcFileId="1" StartOffset="290"/>
+                                    </LocList>
+                                </OpTerm>
+                            </RootTerm>
+                        </CondStmnt>
+                        <BasicStmnt CovItemId="S8" CovItemPrefix="Lampadina.java" Intrnl_Id="39">
+                            <LocList>
+                                <Loc EndOffset="364" SrcFileId="1" StartOffset="351"/>
+                            </LocList>
+                        </BasicStmnt>
+                    </StmntSeq>
+                </HierarchyLvl>
+            </HierarchyLvl>
+        </HierarchyLvl>
+    </MASTRoot>
+    <TestSession Comment="" Date="1678391090492" Name="9 mar 2023, 20:44:50">
+        <TestCase Comment="" Date="1678391090433" Name="TestLampadina:testSstatementCoverage">
+            <CovList>
+                <CovPrefix CovItemPrefix="Lampadina.java">
+                    <Cov CovItemId="B1" Value="2"/>
+                    <Cov CovItemId="B2" Value="1"/>
+                    <Cov CovItemId="B3" Value="1"/>
+                    <Cov CovItemId="S1" Value="3"/>
+                    <Cov CovItemId="S2" Value="3"/>
+                    <Cov CovItemId="S3" Value="2"/>
+                    <Cov CovItemId="S4" Value="2"/>
+                    <Cov CovItemId="S5" Value="1"/>
+                    <Cov CovItemId="S6" Value="1"/>
+                    <Cov CovItemId="S7" Value="1"/>
+                </CovPrefix>
+            </CovList>
+            <AssgnmntList>
+                <AssgnmntPrefix RootTermCovItemPrefix="Lampadina.java">
+                    <AssgnmntListEntry Length="3" RootTermCovItemId="C1">
+                        <MapEntry BoolAssgnmnt="001" Value="1"/>
+                        <MapEntry BoolAssgnmnt="122" Value="1"/>
+                        <MapEntry BoolAssgnmnt="012" Value="1"/>
+                    </AssgnmntListEntry>
+                    <AssgnmntListEntry Length="2" RootTermCovItemId="C2">
+                        <MapEntry BoolAssgnmnt="11" Value="1"/>
+                    </AssgnmntListEntry>
+                </AssgnmntPrefix>
+            </AssgnmntList>
+            <ObjMetaDataList/>
+            <MetaDataList/>
+        </TestCase>
+        <MetaDataList/>
+    </TestSession>
+</TestSessionContainer>

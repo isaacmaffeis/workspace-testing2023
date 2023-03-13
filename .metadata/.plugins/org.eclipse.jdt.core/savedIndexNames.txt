@@ -1,0 +1,10 @@
+INDEX VERSION 1.131+C:\Users\isaac\workspace-testing2023\.metadata\.plugins\org.eclipse.jdt.core
+1963231734.index
+2624007363.index
+91127161.index
+1865797976.index
+2601183450.index
+3948944469.index
+728840136.index
+33798496.index
+1919503855.index

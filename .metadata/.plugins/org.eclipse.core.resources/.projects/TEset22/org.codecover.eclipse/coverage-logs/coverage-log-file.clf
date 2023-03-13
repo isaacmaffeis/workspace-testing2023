@@ -1,0 +1,37 @@
+// Charset: UTF-8
+// ///////////////////////////////
+// 
+// Start Session
+// 
+// 13.03.2023 22:31:51.177
+// 
+// ///////////////////////////////
+// 13.03.2023 22:31:51.409
+TEST_SESSION_CONTAINER "937aeb56-8c82-40b2-a631-a1cd9e28c615"
+START_TEST_CASE "TestLampadina:testSstatementCoverage" 1678743111409
+START_SECTION "Lampadina.java"
+S1 3
+S2 3
+S3 2
+S4 2
+S5 1
+S6 1
+S7 1
+B1 2
+B2 1
+B3 1
+C1-101011 1
+C1-101100 1
+C1-110000 1
+C2-1111 1
+// 13.03.2023 22:31:51.420
+// 00:00.011
+END_TEST_CASE "TestLampadina:testSstatementCoverage" 1678743111420 ""
+// ///////////////////////////////
+// 
+// End Session
+// 
+// 13.03.2023 22:31:51.427
+// 00:00.250
+// 
+// ///////////////////////////////

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1678356703041" TestSessionContainerId="51e861e6-52d7-42de-9f86-8e20b1fbf576" version="1.0">
+    <SrcFileList>
+        <SrcFile Content="package esercizio1;&#13;&#10;&#13;&#10;public class Rettangolo {&#13;&#10;&#13;&#10;&#9;&#13;&#10;&#9;private int base;&#13;&#10;&#9;private int altezza;&#13;&#10;&#9;&#13;&#10;&#9;public Rettangolo(int b, int a){&#13;&#10;&#9;&#9;base=b;&#13;&#10;&#9;&#9;altezza=a;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;public int getBase(){&#13;&#10;&#9;&#9;return base;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;public int getAltezza(){&#13;&#10;&#9;&#9;return altezza;&#13;&#10;&#9;}&#13;&#10;}" Filename="Rettangolo.java" Intrnl_Id="1"/>
+    </SrcFileList>
+    <CritList>
+        <CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+    </CritList>
+    <BoolOpList/>
+    <HierarchyLvlTypeList>
+        <HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="2"/>
+        <HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="3"/>
+        <HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="4"/>
+        <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="5"/>
+    </HierarchyLvlTypeList>
+    <MASTRoot>
+        <HierarchyLvl HierarchyLvlId="32" HierarchyLvlTypeId="5" Intrnl_Id="6" Name="default package">
+            <Header/>
+            <LocList/>
+            <HierarchyLvl HierarchyLvlId="31" HierarchyLvlTypeId="2" Intrnl_Id="7" Name="esercizio1">
+                <Header/>
+                <LocList/>
+                <HierarchyLvl HierarchyLvlId="30" HierarchyLvlTypeId="4" Intrnl_Id="8" Name="Rettangolo">
+                    <Header>
+                        <Loc EndOffset="46" SrcFileId="1" StartOffset="23"/>
+                    </Header>
+                    <LocList>
+                        <Loc EndOffset="266" SrcFileId="1" StartOffset="23"/>
+                    </LocList>
+                    <HierarchyLvl HierarchyLvlId="27" HierarchyLvlTypeId="3" Intrnl_Id="9" Name="Rettangolo">
+                        <Header>
+                            <Loc EndOffset="133" SrcFileId="1" StartOffset="102"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="163" SrcFileId="1" StartOffset="102"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="10">
+                            <LocList>
+                                <Loc EndOffset="145" SrcFileId="1" StartOffset="138"/>
+                                <Loc EndOffset="159" SrcFileId="1" StartOffset="149"/>
+                            </LocList>
+                            <BasicStmnt CovItemId="S1" CovItemPrefix="esercizio1.Rettangolo.java" Intrnl_Id="11">
+                                <LocList>
+                                    <Loc EndOffset="145" SrcFileId="1" StartOffset="138"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <BasicStmnt CovItemId="S2" CovItemPrefix="esercizio1.Rettangolo.java" Intrnl_Id="12">
+                                <LocList>
+                                    <Loc EndOffset="159" SrcFileId="1" StartOffset="149"/>
+                                </LocList>
+                            </BasicStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="28" HierarchyLvlTypeId="3" Intrnl_Id="13" Name="getBase">
+                        <Header>
+                            <Loc EndOffset="189" SrcFileId="1" StartOffset="169"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="210" SrcFileId="1" StartOffset="169"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="14">
+                            <LocList>
+                                <Loc EndOffset="206" SrcFileId="1" StartOffset="194"/>
+                            </LocList>
+                            <BasicStmnt CovItemId="S3" CovItemPrefix="esercizio1.Rettangolo.java" Intrnl_Id="15">
+                                <LocList>
+                                    <Loc EndOffset="206" SrcFileId="1" StartOffset="194"/>
+                                </LocList>
+                            </BasicStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="29" HierarchyLvlTypeId="3" Intrnl_Id="16" Name="getAltezza">
+                        <Header>
+                            <Loc EndOffset="239" SrcFileId="1" StartOffset="216"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="263" SrcFileId="1" StartOffset="216"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="17">
+                            <LocList>
+                                <Loc EndOffset="259" SrcFileId="1" StartOffset="244"/>
+                            </LocList>
+                            <BasicStmnt CovItemId="S4" CovItemPrefix="esercizio1.Rettangolo.java" Intrnl_Id="18">
+                                <LocList>
+                                    <Loc EndOffset="259" SrcFileId="1" StartOffset="244"/>
+                                </LocList>
+                            </BasicStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                </HierarchyLvl>
+            </HierarchyLvl>
+        </HierarchyLvl>
+    </MASTRoot>
+    <TestSession Comment="" Date="1678356714648" Name="9 mar 2023, 11:11:54">
+        <TestCase Comment="" Date="1678356714543" Name="esercizio1.TestTest:test">
+            <CovList>
+                <CovPrefix CovItemPrefix="esercizio1.Rettangolo.java">
+                    <Cov CovItemId="S1" Value="1"/>
+                    <Cov CovItemId="S2" Value="1"/>
+                    <Cov CovItemId="S3" Value="3"/>
+                    <Cov CovItemId="S4" Value="3"/>
+                </CovPrefix>
+            </CovList>
+            <AssgnmntList/>
+            <ObjMetaDataList/>
+            <MetaDataList/>
+        </TestCase>
+        <MetaDataList/>
+    </TestSession>
+    <TestSession Comment="" Date="1678356749514" Name="9 mar 2023, 11:12:29">
+        <TestCase Comment="" Date="1678356749440" Name="esercizio1.TestTest:test">
+            <CovList>
+                <CovPrefix CovItemPrefix="esercizio1.Rettangolo.java">
+                    <Cov CovItemId="S1" Value="1"/>
+                    <Cov CovItemId="S2" Value="1"/>
+                    <Cov CovItemId="S3" Value="3"/>
+                    <Cov CovItemId="S4" Value="3"/>
+                </CovPrefix>
+            </CovList>
+            <AssgnmntList/>
+            <ObjMetaDataList/>
+            <MetaDataList/>
+        </TestCase>
+        <MetaDataList/>
+    </TestSession>
+</TestSessionContainer>
