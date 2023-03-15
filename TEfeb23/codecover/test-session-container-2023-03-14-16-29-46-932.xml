@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1678807786914" TestSessionContainerId="722ea799-3fcf-497a-aefd-2b69254f511c" version="1.0">
+    <SrcFileList>
+        <SrcFile Content="&#13;&#10;public class Pioggia {&#13;&#10;&#9;&#13;&#10;&#9;private float [] pioggia = new float [12];&#13;&#10;&#9;&#13;&#10;&#9;boolean set(int mese, int valore) {&#13;&#10;&#9;&#9;if (mese &lt; 1 || mese &gt; 12 || valore &lt;0 || (valore &gt; 100 &amp;&amp; pioggia[mese - 1 ] &gt; 50))&#13;&#10;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;pioggia[mese - 1] = valore;&#13;&#10;&#9;&#9;return true;&#13;&#10;&#9;}&#13;&#10;&#13;&#10;}&#13;&#10;" Filename="Pioggia.java" Intrnl_Id="1"/>
+    </SrcFileList>
+    <CritList>
+        <CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+    </CritList>
+    <BoolOpList>
+        <BoolOp Arity="2" Intrnl_Id="2" Name="conditional and (&amp;&amp;)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="02" Value="false"/>
+                <MapEntry BoolAssgnmnt="10" Value="false"/>
+                <MapEntry BoolAssgnmnt="11" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+        <BoolOp Arity="2" Intrnl_Id="3" Name="conditional or (||)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="00" Value="false"/>
+                <MapEntry BoolAssgnmnt="01" Value="true"/>
+                <MapEntry BoolAssgnmnt="12" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+    </BoolOpList>
+    <HierarchyLvlTypeList>
+        <HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="4"/>
+        <HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="5"/>
+        <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="6"/>
+    </HierarchyLvlTypeList>
+    <MASTRoot>
+        <HierarchyLvl HierarchyLvlId="9" HierarchyLvlTypeId="6" Intrnl_Id="7" Name="default package">
+            <Header/>
+            <LocList/>
+            <HierarchyLvl HierarchyLvlId="8" HierarchyLvlTypeId="5" Intrnl_Id="8" Name="Pioggia">
+                <Header>
+                    <Loc EndOffset="22" SrcFileId="1" StartOffset="2"/>
+                </Header>
+                <LocList>
+                    <Loc EndOffset="275" SrcFileId="1" StartOffset="2"/>
+                </LocList>
+                <StmntSeq Intrnl_Id="9">
+                    <LocList>
+                        <Loc EndOffset="72" SrcFileId="1" StartOffset="30"/>
+                    </LocList>
+                    <BasicStmnt CovItemId="S1" CovItemPrefix="Pioggia.java" Intrnl_Id="10">
+                        <LocList>
+                            <Loc EndOffset="72" SrcFileId="1" StartOffset="30"/>
+                        </LocList>
+                    </BasicStmnt>
+                </StmntSeq>
+                <HierarchyLvl HierarchyLvlId="7" HierarchyLvlTypeId="4" Intrnl_Id="11" Name="set">
+                    <Header>
+                        <Loc EndOffset="111" SrcFileId="1" StartOffset="78"/>
+                    </Header>
+                    <LocList>
+                        <Loc EndOffset="270" SrcFileId="1" StartOffset="78"/>
+                    </LocList>
+                    <StmntSeq Intrnl_Id="12">
+                        <LocList>
+                            <Loc EndOffset="219" SrcFileId="1" StartOffset="117"/>
+                            <Loc EndOffset="250" SrcFileId="1" StartOffset="223"/>
+                            <Loc EndOffset="266" SrcFileId="1" StartOffset="254"/>
+                        </LocList>
+                        <CondStmnt CovItemId="S2" CovItemPrefix="Pioggia.java" Intrnl_Id="13">
+                            <Branch CovItemId="B1" CovItemPrefix="Pioggia.java" Implct="false" Intrnl_Id="14">
+                                <Cond/>
+                                <LocList>
+                                    <Loc EndOffset="219" SrcFileId="1" StartOffset="206"/>
+                                </LocList>
+                                <StmntSeq Intrnl_Id="15">
+                                    <LocList>
+                                        <Loc EndOffset="219" SrcFileId="1" StartOffset="206"/>
+                                    </LocList>
+                                    <BasicStmnt CovItemId="S3" CovItemPrefix="Pioggia.java" Intrnl_Id="16">
+                                        <LocList>
+                                            <Loc EndOffset="219" SrcFileId="1" StartOffset="206"/>
+                                        </LocList>
+                                    </BasicStmnt>
+                                </StmntSeq>
+                            </Branch>
+                            <Branch CovItemId="B2" CovItemPrefix="Pioggia.java" Implct="true" Intrnl_Id="17">
+                                <Cond/>
+                                <LocList/>
+                                <StmntSeq Intrnl_Id="18">
+                                    <LocList/>
+                                </StmntSeq>
+                            </Branch>
+                            <Keyword EndOffset="119" SrcFileId="1" StartOffset="117"/>
+                            <LocList>
+                                <Loc EndOffset="219" SrcFileId="1" StartOffset="117"/>
+                            </LocList>
+                            <RootTerm CovItemId="C1" CovItemPrefix="Pioggia.java" Intrnl_Id="19">
+                                <OpTerm BooleanOpId="3" Intrnl_Id="20">
+                                    <OpTerm BooleanOpId="3" Intrnl_Id="21">
+                                        <OpTerm BooleanOpId="3" Intrnl_Id="22">
+                                            <BasicBoolTerm Intrnl_Id="23">
+                                                <LocList>
+                                                    <Loc EndOffset="129" SrcFileId="1" StartOffset="121"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <BasicBoolTerm Intrnl_Id="24">
+                                                <LocList>
+                                                    <Loc EndOffset="142" SrcFileId="1" StartOffset="133"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <LocList>
+                                                <Loc EndOffset="132" SrcFileId="1" StartOffset="130"/>
+                                            </LocList>
+                                        </OpTerm>
+                                        <BasicBoolTerm Intrnl_Id="25">
+                                            <LocList>
+                                                <Loc EndOffset="155" SrcFileId="1" StartOffset="146"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="145" SrcFileId="1" StartOffset="143"/>
+                                        </LocList>
+                                    </OpTerm>
+                                    <OpTerm BooleanOpId="2" Intrnl_Id="26">
+                                        <BasicBoolTerm Intrnl_Id="27">
+                                            <LocList>
+                                                <Loc EndOffset="172" SrcFileId="1" StartOffset="160"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <BasicBoolTerm Intrnl_Id="28">
+                                            <LocList>
+                                                <Loc EndOffset="199" SrcFileId="1" StartOffset="176"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="175" SrcFileId="1" StartOffset="173"/>
+                                        </LocList>
+                                    </OpTerm>
+                                    <LocList>
+                                        <Loc EndOffset="158" SrcFileId="1" StartOffset="156"/>
+                                    </LocList>
+                                </OpTerm>
+                            </RootTerm>
+                        </CondStmnt>
+                        <BasicStmnt CovItemId="S4" CovItemPrefix="Pioggia.java" Intrnl_Id="29">
+                            <LocList>
+                                <Loc EndOffset="250" SrcFileId="1" StartOffset="223"/>
+                            </LocList>
+                        </BasicStmnt>
+                        <BasicStmnt CovItemId="S5" CovItemPrefix="Pioggia.java" Intrnl_Id="30">
+                            <LocList>
+                                <Loc EndOffset="266" SrcFileId="1" StartOffset="254"/>
+                            </LocList>
+                        </BasicStmnt>
+                    </StmntSeq>
+                </HierarchyLvl>
+            </HierarchyLvl>
+        </HierarchyLvl>
+    </MASTRoot>
+    <TestSession Comment="" Date="1678807790541" Name="14 mar 2023, 16:29:50">
+        <TestCase Comment="" Date="1678807790410" Name="PioggiaTest:testSet">
+            <CovList>
+                <CovPrefix CovItemPrefix="Pioggia.java">
+                    <Cov CovItemId="B1" Value="1"/>
+                    <Cov CovItemId="B2" Value="1"/>
+                    <Cov CovItemId="S1" Value="1"/>
+                    <Cov CovItemId="S2" Value="2"/>
+                    <Cov CovItemId="S3" Value="1"/>
+                    <Cov CovItemId="S4" Value="1"/>
+                    <Cov CovItemId="S5" Value="1"/>
+                </CovPrefix>
+            </CovList>
+            <AssgnmntList>
+                <AssgnmntPrefix RootTermCovItemPrefix="Pioggia.java">
+                    <AssgnmntListEntry Length="5" RootTermCovItemId="C1">
+                        <MapEntry BoolAssgnmnt="12222" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00002" Value="1"/>
+                    </AssgnmntListEntry>
+                </AssgnmntPrefix>
+            </AssgnmntList>
+            <ObjMetaDataList/>
+            <MetaDataList/>
+        </TestCase>
+        <MetaDataList/>
+    </TestSession>
+    <TestSession Comment="" Date="1678808147040" Name="14 mar 2023, 16:35:47">
+        <TestCase Comment="" Date="1678808146941" Name="PioggiaTest:testSet">
+            <CovList>
+                <CovPrefix CovItemPrefix="Pioggia.java">
+                    <Cov CovItemId="B1" Value="1"/>
+                    <Cov CovItemId="B2" Value="2"/>
+                    <Cov CovItemId="S1" Value="1"/>
+                    <Cov CovItemId="S2" Value="3"/>
+                    <Cov CovItemId="S3" Value="1"/>
+                    <Cov CovItemId="S4" Value="2"/>
+                    <Cov CovItemId="S5" Value="2"/>
+                </CovPrefix>
+            </CovList>
+            <AssgnmntList>
+                <AssgnmntPrefix RootTermCovItemPrefix="Pioggia.java">
+                    <AssgnmntListEntry Length="5" RootTermCovItemId="C1">
+                        <MapEntry BoolAssgnmnt="12222" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00002" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00010" Value="1"/>
+                    </AssgnmntListEntry>
+                </AssgnmntPrefix>
+            </AssgnmntList>
+            <ObjMetaDataList/>
+            <MetaDataList/>
+        </TestCase>
+        <MetaDataList/>
+    </TestSession>
+    <TestSession Comment="" Date="1678808324833" Name="14 mar 2023, 16:38:44">
+        <TestCase Comment="Failure&#10;java.lang.AssertionError&#13;&#10;&#9;at org.junit.Assert.fail(Assert.java:87)&#13;&#10;&#9;at org.junit.Assert.assertTrue(Assert.java:42)&#13;&#10;&#9;at org.junit.Assert.assertTrue(Assert.java:53)&#13;&#10;&#9;at PioggiaTest.testSet(PioggiaTest.java:22)&#13;&#10;&#9;at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;&#10;&#9;at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)&#13;&#10;&#9;at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;&#10;&#9;at java.base/java.lang.reflect.Method.invoke(Method.java:568)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;&#10;&#9;at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;&#10;&#9;at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)&#13;&#10;&#9;at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)&#13;&#10;&#9;at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)&#13;&#10;&#9;at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)&#13;&#10;&#9;at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)&#13;&#10;&#9;at org.junit.runners.ParentRunner.run(ParentRunner.java:413)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:93)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:756)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452)&#13;&#10;&#9;at org.codecover.juniteclipse.runner.EclipseTestRunner.main(EclipseTestRunner.java:40)" Date="1678808324646" Name="PioggiaTest:testSet">
+            <CovList>
+                <CovPrefix CovItemPrefix="Pioggia.java">
+                    <Cov CovItemId="B1" Value="2"/>
+                    <Cov CovItemId="B2" Value="2"/>
+                    <Cov CovItemId="S1" Value="1"/>
+                    <Cov CovItemId="S2" Value="4"/>
+                    <Cov CovItemId="S3" Value="2"/>
+                    <Cov CovItemId="S4" Value="2"/>
+                    <Cov CovItemId="S5" Value="2"/>
+                </CovPrefix>
+            </CovList>
+            <AssgnmntList>
+                <AssgnmntPrefix RootTermCovItemPrefix="Pioggia.java">
+                    <AssgnmntListEntry Length="5" RootTermCovItemId="C1">
+                        <MapEntry BoolAssgnmnt="12222" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00002" Value="2"/>
+                        <MapEntry BoolAssgnmnt="00011" Value="1"/>
+                    </AssgnmntListEntry>
+                </AssgnmntPrefix>
+            </AssgnmntList>
+            <ObjMetaDataList/>
+            <MetaDataList/>
+        </TestCase>
+        <MetaDataList/>
+    </TestSession>
+    <TestSession Comment="" Date="1678808447357" Name="14 mar 2023, 16:40:47">
+        <TestCase Comment="" Date="1678808447272" Name="PioggiaTest:testSet">
+            <CovList>
+                <CovPrefix CovItemPrefix="Pioggia.java">
+                    <Cov CovItemId="B1" Value="2"/>
+                    <Cov CovItemId="B2" Value="2"/>
+                    <Cov CovItemId="S1" Value="1"/>
+                    <Cov CovItemId="S2" Value="4"/>
+                    <Cov CovItemId="S3" Value="2"/>
+                    <Cov CovItemId="S4" Value="2"/>
+                    <Cov CovItemId="S5" Value="2"/>
+                </CovPrefix>
+            </CovList>
+            <AssgnmntList>
+                <AssgnmntPrefix RootTermCovItemPrefix="Pioggia.java">
+                    <AssgnmntListEntry Length="5" RootTermCovItemId="C1">
+                        <MapEntry BoolAssgnmnt="12222" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00002" Value="2"/>
+                        <MapEntry BoolAssgnmnt="00011" Value="1"/>
+                    </AssgnmntListEntry>
+                </AssgnmntPrefix>
+            </AssgnmntList>
+            <ObjMetaDataList/>
+            <MetaDataList/>
+        </TestCase>
+        <MetaDataList/>
+    </TestSession>
+    <TestSession Comment="" Date="1678808796165" Name="14 mar 2023, 16:46:36">
+        <TestCase Comment="Failure&#10;java.lang.AssertionError&#13;&#10;&#9;at org.junit.Assert.fail(Assert.java:87)&#13;&#10;&#9;at org.junit.Assert.assertTrue(Assert.java:42)&#13;&#10;&#9;at org.junit.Assert.assertFalse(Assert.java:65)&#13;&#10;&#9;at org.junit.Assert.assertFalse(Assert.java:75)&#13;&#10;&#9;at PioggiaTest.testSet(PioggiaTest.java:34)&#13;&#10;&#9;at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#13;&#10;&#9;at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)&#13;&#10;&#9;at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)&#13;&#10;&#9;at java.base/java.lang.reflect.Method.invoke(Method.java:568)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)&#13;&#10;&#9;at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)&#13;&#10;&#9;at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)&#13;&#10;&#9;at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)&#13;&#10;&#9;at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)&#13;&#10;&#9;at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)&#13;&#10;&#9;at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)&#13;&#10;&#9;at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)&#13;&#10;&#9;at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)&#13;&#10;&#9;at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)&#13;&#10;&#9;at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)&#13;&#10;&#9;at org.junit.runners.ParentRunner.run(ParentRunner.java:413)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:93)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:756)&#13;&#10;&#9;at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452)&#13;&#10;&#9;at org.codecover.juniteclipse.runner.EclipseTestRunner.main(EclipseTestRunner.java:40)" Date="1678808796035" Name="PioggiaTest:testSet">
+            <CovList>
+                <CovPrefix CovItemPrefix="Pioggia.java">
+                    <Cov CovItemId="B1" Value="4"/>
+                    <Cov CovItemId="B2" Value="4"/>
+                    <Cov CovItemId="S1" Value="1"/>
+                    <Cov CovItemId="S2" Value="8"/>
+                    <Cov CovItemId="S3" Value="4"/>
+                    <Cov CovItemId="S4" Value="4"/>
+                    <Cov CovItemId="S5" Value="4"/>
+                </CovPrefix>
+            </CovList>
+            <AssgnmntList>
+                <AssgnmntPrefix RootTermCovItemPrefix="Pioggia.java">
+                    <AssgnmntListEntry Length="5" RootTermCovItemId="C1">
+                        <MapEntry BoolAssgnmnt="12222" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00122" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00002" Value="3"/>
+                        <MapEntry BoolAssgnmnt="00010" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00011" Value="1"/>
+                        <MapEntry BoolAssgnmnt="01222" Value="1"/>
+                    </AssgnmntListEntry>
+                </AssgnmntPrefix>
+            </AssgnmntList>
+            <ObjMetaDataList/>
+            <MetaDataList/>
+        </TestCase>
+        <MetaDataList/>
+    </TestSession>
+    <TestSession Comment="" Date="1678808912252" Name="14 mar 2023, 16:48:32">
+        <TestCase Comment="" Date="1678808912153" Name="PioggiaTest:testSet">
+            <CovList>
+                <CovPrefix CovItemPrefix="Pioggia.java">
+                    <Cov CovItemId="B1" Value="4"/>
+                    <Cov CovItemId="B2" Value="4"/>
+                    <Cov CovItemId="S1" Value="1"/>
+                    <Cov CovItemId="S2" Value="8"/>
+                    <Cov CovItemId="S3" Value="4"/>
+                    <Cov CovItemId="S4" Value="4"/>
+                    <Cov CovItemId="S5" Value="4"/>
+                </CovPrefix>
+            </CovList>
+            <AssgnmntList>
+                <AssgnmntPrefix RootTermCovItemPrefix="Pioggia.java">
+                    <AssgnmntListEntry Length="5" RootTermCovItemId="C1">
+                        <MapEntry BoolAssgnmnt="12222" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00122" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00002" Value="3"/>
+                        <MapEntry BoolAssgnmnt="00010" Value="1"/>
+                        <MapEntry BoolAssgnmnt="00011" Value="1"/>
+                        <MapEntry BoolAssgnmnt="01222" Value="1"/>
+                    </AssgnmntListEntry>
+                </AssgnmntPrefix>
+            </AssgnmntList>
+            <ObjMetaDataList/>
+            <MetaDataList/>
+        </TestCase>
+        <MetaDataList/>
+    </TestSession>
+</TestSessionContainer>

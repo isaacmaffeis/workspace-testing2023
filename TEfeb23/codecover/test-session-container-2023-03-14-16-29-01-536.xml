@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1678807741489" TestSessionContainerId="4a6816f5-1da2-462f-ba4c-0a0145d7aa3f" version="1.0">
+    <SrcFileList>
+        <SrcFile Content="&#13;&#10;public class Pioggia {&#13;&#10;&#13;&#10;}&#13;&#10;" Filename="Pioggia.java" Intrnl_Id="1"/>
+    </SrcFileList>
+    <CritList>
+        <CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+    </CritList>
+    <BoolOpList/>
+    <HierarchyLvlTypeList>
+        <HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="2"/>
+        <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="3"/>
+    </HierarchyLvlTypeList>
+    <MASTRoot>
+        <HierarchyLvl HierarchyLvlId="6" HierarchyLvlTypeId="3" Intrnl_Id="4" Name="default package">
+            <Header/>
+            <LocList/>
+            <HierarchyLvl HierarchyLvlId="5" HierarchyLvlTypeId="2" Intrnl_Id="5" Name="Pioggia">
+                <Header>
+                    <Loc EndOffset="22" SrcFileId="1" StartOffset="2"/>
+                </Header>
+                <LocList>
+                    <Loc EndOffset="29" SrcFileId="1" StartOffset="2"/>
+                </LocList>
+            </HierarchyLvl>
+        </HierarchyLvl>
+    </MASTRoot>
+</TestSessionContainer>
