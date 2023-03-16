@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1678357826985" TestSessionContainerId="3960300e-9631-43f2-a31f-43b636dac972" version="1.0">
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1678789725271" TestSessionContainerId="f1c24a92-9575-440d-93ec-5a077506df97" version="1.0">
     <SrcFileList>
         <SrcFile Content="package esercizio1;&#13;&#10;&#13;&#10;public class Rettangolo {&#13;&#10;&#13;&#10;&#9;&#13;&#10;&#9;private int base;&#13;&#10;&#9;private int altezza;&#13;&#10;&#9;&#13;&#10;&#9;public Rettangolo(int b, int a){&#13;&#10;&#9;&#9;base=b;&#13;&#10;&#9;&#9;altezza=a;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;public int getBase(){&#13;&#10;&#9;&#9;return base;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;public int getAltezza(){&#13;&#10;&#9;&#9;return altezza;&#13;&#10;&#9;}&#13;&#10;}" Filename="Rettangolo.java" Intrnl_Id="1"/>
     </SrcFileList>
@@ -18,20 +18,20 @@
         <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="5"/>
     </HierarchyLvlTypeList>
     <MASTRoot>
-        <HierarchyLvl HierarchyLvlId="43" HierarchyLvlTypeId="5" Intrnl_Id="6" Name="default package">
+        <HierarchyLvl HierarchyLvlId="9" HierarchyLvlTypeId="5" Intrnl_Id="6" Name="default package">
             <Header/>
             <LocList/>
-            <HierarchyLvl HierarchyLvlId="42" HierarchyLvlTypeId="2" Intrnl_Id="7" Name="esercizio1">
+            <HierarchyLvl HierarchyLvlId="8" HierarchyLvlTypeId="2" Intrnl_Id="7" Name="esercizio1">
                 <Header/>
                 <LocList/>
-                <HierarchyLvl HierarchyLvlId="41" HierarchyLvlTypeId="4" Intrnl_Id="8" Name="Rettangolo">
+                <HierarchyLvl HierarchyLvlId="7" HierarchyLvlTypeId="4" Intrnl_Id="8" Name="Rettangolo">
                     <Header>
                         <Loc EndOffset="46" SrcFileId="1" StartOffset="23"/>
                     </Header>
                     <LocList>
                         <Loc EndOffset="266" SrcFileId="1" StartOffset="23"/>
                     </LocList>
-                    <HierarchyLvl HierarchyLvlId="38" HierarchyLvlTypeId="3" Intrnl_Id="9" Name="Rettangolo">
+                    <HierarchyLvl HierarchyLvlId="4" HierarchyLvlTypeId="3" Intrnl_Id="9" Name="Rettangolo">
                         <Header>
                             <Loc EndOffset="133" SrcFileId="1" StartOffset="102"/>
                         </Header>
@@ -55,7 +55,7 @@
                             </BasicStmnt>
                         </StmntSeq>
                     </HierarchyLvl>
-                    <HierarchyLvl HierarchyLvlId="39" HierarchyLvlTypeId="3" Intrnl_Id="13" Name="getBase">
+                    <HierarchyLvl HierarchyLvlId="5" HierarchyLvlTypeId="3" Intrnl_Id="13" Name="getBase">
                         <Header>
                             <Loc EndOffset="189" SrcFileId="1" StartOffset="169"/>
                         </Header>
@@ -73,7 +73,7 @@
                             </BasicStmnt>
                         </StmntSeq>
                     </HierarchyLvl>
-                    <HierarchyLvl HierarchyLvlId="40" HierarchyLvlTypeId="3" Intrnl_Id="16" Name="getAltezza">
+                    <HierarchyLvl HierarchyLvlId="6" HierarchyLvlTypeId="3" Intrnl_Id="16" Name="getAltezza">
                         <Header>
                             <Loc EndOffset="239" SrcFileId="1" StartOffset="216"/>
                         </Header>
