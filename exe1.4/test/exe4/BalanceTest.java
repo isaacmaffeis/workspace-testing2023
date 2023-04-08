@@ -19,10 +19,12 @@ public class BalanceTest {
 	
 	@Test
 	public void testStatementCoverageBalance(){ //Incluso nel Branch, ogni riga deve essere eseguita
-		Balance b1=new Balance();
-		b1.setBalanceValue(3, 300);
-		Balance b2=new Balance();
-		b2.setBalanceValue(4, 300);	
+		Balance b1 = new Balance();
+		assertTrue(b1.setBalanceValue(2, 200));
+		Balance b2 = new Balance();
+		assertFalse(b2.setBalanceValue(10, 50));
+		assertEquals(b2.getP(), 10);
+		assertEquals(b2.getW(), 50);	
 	}
 	
 	/*Costruisci oggetti Balance che abbiano valori di
@@ -80,6 +82,38 @@ public class BalanceTest {
 		Balance b8=new Balance();
 		b8.setBalanceValue(0, 1200); //{false},T,F	
 	}
+	
+	
+//	// MCDC
+//	@Test
+//	public void test3() {
+//		Balance b3 = new Balance();
+//		assertTrue(b3.setBalanceValue(2, 200)); // T T F x
+//		Balance b4 = new Balance();
+//		assertFalse(b4.setBalanceValue(10, 500)); // F F F x
+//		Balance b5 = new Balance();
+//		assertTrue(b5.setBalanceValue(0, 500)); // T F T T
+//		Balance b6 = new Balance();
+//		assertFalse(b6.setBalanceValue(0, 2000)); // T F T F
+//		
+//		
+//	}
+//	
+//	/*
+//	 * if((p<4 && w<=400) || (p==0 && w<=1000))
+//	 * 		T		T			F		x			T   case1
+//	 * 		F		x=F			F		x			F	case2
+//	 * 
+//	 * 		T		T			F		x			T  =case1
+//	 * 		T		F			F		x			F  =case2
+//	 * 
+//	 * 		x=T		F			T		T			T  case3
+//	 * 		x=T		F			T		F			F  case4
+//	 * 
+//	 * 		x=T		F			T		T			T  =case3
+//	 * 		x=T		F			T		F			F  =case4
+//	 * 
+//	 */
 	
 	@Test
 	public void assertTest(){
