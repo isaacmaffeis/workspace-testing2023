@@ -1,0 +1,24 @@
+
+// scenario con il suo nome
+scenario scenario1
+// la asm che deve caricare
+load orologio2.asm
+
+check secondi = 0;
+check minuti = 0;
+set signal:= false;
+
+step 
+check secondi = 0;
+check minuti = 0;
+
+set signal:= true;
+
+step 
+check secondi = 1;
+check minuti = 0;
+
+
+ 
+
+
