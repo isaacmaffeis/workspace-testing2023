@@ -1,0 +1,29 @@
+--file G:\Il mio Drive\Documenti\didattica\dottorato\asmetaGSSI\codiceAsmetaCorsoGSSI\atgt\AdvancedClock.smv
+-- options: flatten? false
+MODULE main
+	VAR
+		hours: {-2147483647, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; --controlled
+		minutes: {-2147483647, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; --controlled
+		seconds: {-2147483647, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; --controlled
+		signal: boolean; --monitored
+	ASSIGN
+		init(hours) := 0;
+		init(minutes) := 0;
+		init(seconds) := 0;
+		next(hours) :=
+			case
+				(((seconds = 9) & signal) & (minutes = 9)) & ((hours + 1) mod 10) in {-2147483647, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}: ((hours + 1) mod 10);
+				TRUE: hours;
+			esac;
+		next(minutes) :=
+			case
+				((seconds = 9) & signal) & ((minutes + 1) mod 10) in {-2147483647, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}: ((minutes + 1) mod 10);
+				TRUE: minutes;
+			esac;
+		next(seconds) :=
+			case
+				(signal) & ((seconds + 1) mod 10) in {-2147483647, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9}: ((seconds + 1) mod 10);
+				TRUE: seconds;
+			esac;
+--CTL properties
+CTLSPEC NAME ctl0 := AG(!(! signal));
