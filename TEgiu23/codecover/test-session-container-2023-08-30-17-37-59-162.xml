@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1693409879156" TestSessionContainerId="1de3aa13-4eb3-46a2-84e1-ac1b7542220b" version="1.0">
+    <SrcFileList>
+        <SrcFile Content="package es4;&#13;&#10;&#13;&#10;public class Car { &#13;&#10;&#9;&#13;&#10;&#9;private int speed = 0;&#13;&#10;&#9;&#13;&#10;&#9;//ferma la macchina (decrementa speed di x tra 1 e 10) restituisce true // solo se la macchina è ferma &#13;&#10;&#9;boolean stop(int decel) {&#13;&#10;&#9;&#9;if (decel &gt;= 1 &amp;&amp; decel &lt;= 10 &amp;&amp; speed &gt; 0 &amp;&amp; speed - decel &lt;= 0){&#13;&#10;&#9;&#9;&#9;speed -= decel; &#13;&#10;&#9;&#9;&#9;if (speed &lt; 0) &#13;&#10;&#9;&#9;&#9;&#9;speed = 0; &#13;&#10;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;if (decel &gt;= 1 &amp;&amp; decel &lt;= 10 &amp;&amp; speed &gt;= decel)&#13;&#10;&#9;&#9;&#9;speed -= decel;&#13;&#10;&#9;&#9;return false;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;void acc(int step) {&#13;&#10;&#9;&#9;if (step &gt;= 1 &amp;&amp; step &lt;= 4) &#13;&#10;&#9;&#9;&#9;speed += step;&#13;&#10;&#9;}&#13;&#10;}&#13;&#10;&#13;&#10;/*&#13;&#10;Scrivere i casi di test JUNIT per ottenere la copertura:&#13;&#10;&#9;- Delle istruzioni&#13;&#10;&#9;- Dei branch (solo quelli in più rispetto alle istruzion)&#13;&#10;&#9; - MCDC&#13;&#10;*/&#13;&#10;" Filename="Car.java" Intrnl_Id="1"/>
+    </SrcFileList>
+    <CritList>
+        <CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+    </CritList>
+    <BoolOpList>
+        <BoolOp Arity="2" Intrnl_Id="2" Name="conditional and (&amp;&amp;)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="02" Value="false"/>
+                <MapEntry BoolAssgnmnt="10" Value="false"/>
+                <MapEntry BoolAssgnmnt="11" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+    </BoolOpList>
+    <HierarchyLvlTypeList>
+        <HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="3"/>
+        <HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="4"/>
+        <HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="5"/>
+        <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="6"/>
+    </HierarchyLvlTypeList>
+    <MASTRoot>
+        <HierarchyLvl HierarchyLvlId="435" HierarchyLvlTypeId="6" Intrnl_Id="7" Name="default package">
+            <Header/>
+            <LocList/>
+            <HierarchyLvl HierarchyLvlId="434" HierarchyLvlTypeId="3" Intrnl_Id="8" Name="es4">
+                <Header/>
+                <LocList/>
+                <HierarchyLvl HierarchyLvlId="433" HierarchyLvlTypeId="5" Intrnl_Id="9" Name="Car">
+                    <Header>
+                        <Loc EndOffset="32" SrcFileId="1" StartOffset="16"/>
+                    </Header>
+                    <LocList>
+                        <Loc EndOffset="527" SrcFileId="1" StartOffset="16"/>
+                    </LocList>
+                    <StmntSeq Intrnl_Id="10">
+                        <LocList>
+                            <Loc EndOffset="63" SrcFileId="1" StartOffset="41"/>
+                        </LocList>
+                        <BasicStmnt CovItemId="S1" CovItemPrefix="es4.Car.java" Intrnl_Id="11">
+                            <LocList>
+                                <Loc EndOffset="63" SrcFileId="1" StartOffset="41"/>
+                            </LocList>
+                        </BasicStmnt>
+                    </StmntSeq>
+                    <HierarchyLvl HierarchyLvlId="431" HierarchyLvlTypeId="4" Intrnl_Id="12" Name="stop">
+                        <Header>
+                            <Loc EndOffset="198" SrcFileId="1" StartOffset="175"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="443" SrcFileId="1" StartOffset="175"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="13">
+                            <LocList>
+                                <Loc EndOffset="350" SrcFileId="1" StartOffset="204"/>
+                                <Loc EndOffset="422" SrcFileId="1" StartOffset="354"/>
+                                <Loc EndOffset="439" SrcFileId="1" StartOffset="426"/>
+                            </LocList>
+                            <CondStmnt CovItemId="S2" CovItemPrefix="es4.Car.java" Intrnl_Id="14">
+                                <Branch CovItemId="B1" CovItemPrefix="es4.Car.java" Implct="false" Intrnl_Id="15">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="350" SrcFileId="1" StartOffset="269"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="16">
+                                        <LocList>
+                                            <Loc EndOffset="290" SrcFileId="1" StartOffset="275"/>
+                                            <Loc EndOffset="327" SrcFileId="1" StartOffset="296"/>
+                                            <Loc EndOffset="345" SrcFileId="1" StartOffset="333"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S3" CovItemPrefix="es4.Car.java" Intrnl_Id="17">
+                                            <LocList>
+                                                <Loc EndOffset="290" SrcFileId="1" StartOffset="275"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                        <CondStmnt CovItemId="S4" CovItemPrefix="es4.Car.java" Intrnl_Id="18">
+                                            <Branch CovItemId="B3" CovItemPrefix="es4.Car.java" Implct="false" Intrnl_Id="19">
+                                                <Cond/>
+                                                <LocList>
+                                                    <Loc EndOffset="327" SrcFileId="1" StartOffset="317"/>
+                                                </LocList>
+                                                <StmntSeq Intrnl_Id="20">
+                                                    <LocList>
+                                                        <Loc EndOffset="327" SrcFileId="1" StartOffset="317"/>
+                                                    </LocList>
+                                                    <BasicStmnt CovItemId="S5" CovItemPrefix="es4.Car.java" Intrnl_Id="21">
+                                                        <LocList>
+                                                            <Loc EndOffset="327" SrcFileId="1" StartOffset="317"/>
+                                                        </LocList>
+                                                    </BasicStmnt>
+                                                </StmntSeq>
+                                            </Branch>
+                                            <Branch CovItemId="B4" CovItemPrefix="es4.Car.java" Implct="true" Intrnl_Id="22">
+                                                <Cond/>
+                                                <LocList/>
+                                                <StmntSeq Intrnl_Id="23">
+                                                    <LocList/>
+                                                </StmntSeq>
+                                            </Branch>
+                                            <Keyword EndOffset="298" SrcFileId="1" StartOffset="296"/>
+                                            <LocList>
+                                                <Loc EndOffset="327" SrcFileId="1" StartOffset="296"/>
+                                            </LocList>
+                                            <RootTerm CovItemId="C2" CovItemPrefix="es4.Car.java" Intrnl_Id="24">
+                                                <BasicBoolTerm Intrnl_Id="25">
+                                                    <LocList>
+                                                        <Loc EndOffset="309" SrcFileId="1" StartOffset="300"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                            </RootTerm>
+                                        </CondStmnt>
+                                        <BasicStmnt CovItemId="S6" CovItemPrefix="es4.Car.java" Intrnl_Id="26">
+                                            <LocList>
+                                                <Loc EndOffset="345" SrcFileId="1" StartOffset="333"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B2" CovItemPrefix="es4.Car.java" Implct="true" Intrnl_Id="27">
+                                    <Cond/>
+                                    <LocList/>
+                                    <StmntSeq Intrnl_Id="28">
+                                        <LocList/>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="206" SrcFileId="1" StartOffset="204"/>
+                                <LocList>
+                                    <Loc EndOffset="350" SrcFileId="1" StartOffset="204"/>
+                                </LocList>
+                                <RootTerm CovItemId="C1" CovItemPrefix="es4.Car.java" Intrnl_Id="29">
+                                    <OpTerm BooleanOpId="2" Intrnl_Id="30">
+                                        <OpTerm BooleanOpId="2" Intrnl_Id="31">
+                                            <OpTerm BooleanOpId="2" Intrnl_Id="32">
+                                                <BasicBoolTerm Intrnl_Id="33">
+                                                    <LocList>
+                                                        <Loc EndOffset="218" SrcFileId="1" StartOffset="208"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                                <BasicBoolTerm Intrnl_Id="34">
+                                                    <LocList>
+                                                        <Loc EndOffset="233" SrcFileId="1" StartOffset="222"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                                <LocList>
+                                                    <Loc EndOffset="221" SrcFileId="1" StartOffset="219"/>
+                                                </LocList>
+                                            </OpTerm>
+                                            <BasicBoolTerm Intrnl_Id="35">
+                                                <LocList>
+                                                    <Loc EndOffset="246" SrcFileId="1" StartOffset="237"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <LocList>
+                                                <Loc EndOffset="236" SrcFileId="1" StartOffset="234"/>
+                                            </LocList>
+                                        </OpTerm>
+                                        <BasicBoolTerm Intrnl_Id="36">
+                                            <LocList>
+                                                <Loc EndOffset="268" SrcFileId="1" StartOffset="250"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="249" SrcFileId="1" StartOffset="247"/>
+                                        </LocList>
+                                    </OpTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                            <CondStmnt CovItemId="S7" CovItemPrefix="es4.Car.java" Intrnl_Id="37">
+                                <Branch CovItemId="B5" CovItemPrefix="es4.Car.java" Implct="false" Intrnl_Id="38">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="422" SrcFileId="1" StartOffset="407"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="39">
+                                        <LocList>
+                                            <Loc EndOffset="422" SrcFileId="1" StartOffset="407"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S8" CovItemPrefix="es4.Car.java" Intrnl_Id="40">
+                                            <LocList>
+                                                <Loc EndOffset="422" SrcFileId="1" StartOffset="407"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B6" CovItemPrefix="es4.Car.java" Implct="true" Intrnl_Id="41">
+                                    <Cond/>
+                                    <LocList/>
+                                    <StmntSeq Intrnl_Id="42">
+                                        <LocList/>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="356" SrcFileId="1" StartOffset="354"/>
+                                <LocList>
+                                    <Loc EndOffset="422" SrcFileId="1" StartOffset="354"/>
+                                </LocList>
+                                <RootTerm CovItemId="C3" CovItemPrefix="es4.Car.java" Intrnl_Id="43">
+                                    <OpTerm BooleanOpId="2" Intrnl_Id="44">
+                                        <OpTerm BooleanOpId="2" Intrnl_Id="45">
+                                            <BasicBoolTerm Intrnl_Id="46">
+                                                <LocList>
+                                                    <Loc EndOffset="368" SrcFileId="1" StartOffset="358"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <BasicBoolTerm Intrnl_Id="47">
+                                                <LocList>
+                                                    <Loc EndOffset="383" SrcFileId="1" StartOffset="372"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <LocList>
+                                                <Loc EndOffset="371" SrcFileId="1" StartOffset="369"/>
+                                            </LocList>
+                                        </OpTerm>
+                                        <BasicBoolTerm Intrnl_Id="48">
+                                            <LocList>
+                                                <Loc EndOffset="401" SrcFileId="1" StartOffset="387"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="386" SrcFileId="1" StartOffset="384"/>
+                                        </LocList>
+                                    </OpTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                            <BasicStmnt CovItemId="S9" CovItemPrefix="es4.Car.java" Intrnl_Id="49">
+                                <LocList>
+                                    <Loc EndOffset="439" SrcFileId="1" StartOffset="426"/>
+                                </LocList>
+                            </BasicStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="432" HierarchyLvlTypeId="4" Intrnl_Id="50" Name="acc">
+                        <Header>
+                            <Loc EndOffset="467" SrcFileId="1" StartOffset="449"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="524" SrcFileId="1" StartOffset="449"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="51">
+                            <LocList>
+                                <Loc EndOffset="520" SrcFileId="1" StartOffset="473"/>
+                            </LocList>
+                            <CondStmnt CovItemId="S10" CovItemPrefix="es4.Car.java" Intrnl_Id="52">
+                                <Branch CovItemId="B7" CovItemPrefix="es4.Car.java" Implct="false" Intrnl_Id="53">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="520" SrcFileId="1" StartOffset="506"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="54">
+                                        <LocList>
+                                            <Loc EndOffset="520" SrcFileId="1" StartOffset="506"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S11" CovItemPrefix="es4.Car.java" Intrnl_Id="55">
+                                            <LocList>
+                                                <Loc EndOffset="520" SrcFileId="1" StartOffset="506"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B8" CovItemPrefix="es4.Car.java" Implct="true" Intrnl_Id="56">
+                                    <Cond/>
+                                    <LocList/>
+                                    <StmntSeq Intrnl_Id="57">
+                                        <LocList/>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="475" SrcFileId="1" StartOffset="473"/>
+                                <LocList>
+                                    <Loc EndOffset="520" SrcFileId="1" StartOffset="473"/>
+                                </LocList>
+                                <RootTerm CovItemId="C4" CovItemPrefix="es4.Car.java" Intrnl_Id="58">
+                                    <OpTerm BooleanOpId="2" Intrnl_Id="59">
+                                        <BasicBoolTerm Intrnl_Id="60">
+                                            <LocList>
+                                                <Loc EndOffset="486" SrcFileId="1" StartOffset="477"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <BasicBoolTerm Intrnl_Id="61">
+                                            <LocList>
+                                                <Loc EndOffset="499" SrcFileId="1" StartOffset="490"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="489" SrcFileId="1" StartOffset="487"/>
+                                        </LocList>
+                                    </OpTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                </HierarchyLvl>
+            </HierarchyLvl>
+        </HierarchyLvl>
+    </MASTRoot>
+</TestSessionContainer>
