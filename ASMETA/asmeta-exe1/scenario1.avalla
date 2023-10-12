@@ -1,0 +1,7 @@
+scenario scenario1
+
+load asmeta_exe1.asm
+
+step until numA = numB;
+
+check numA = 13;
