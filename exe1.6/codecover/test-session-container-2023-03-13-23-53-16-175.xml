@@ -1,0 +1,702 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1678747996154" TestSessionContainerId="9be68b30-6808-496d-b9ea-98d71b99bee2" version="1.0">
+    <SrcFileList>
+        <SrcFile Content="package exe6;&#13;&#10;&#13;&#10;public class RushHour {&#13;&#10;&#9;&#13;&#10;&#9;int griglia[][];&#13;&#10;&#13;&#10;&#9;public RushHour() {&#13;&#10;&#13;&#10;&#9;&#9;griglia = new int[6][6];&#13;&#10;&#13;&#10;&#9;&#9;// questo sarebbe inutile perchè è inizilizzato a zero di default&#13;&#10;&#9;&#9;for (int i = 0; i &lt;= 5; i++) {&#13;&#10;&#9;&#9;&#9;for (int j = 0; j &lt;= 5; j++) {&#13;&#10;&#9;&#9;&#9;&#9;griglia[i][j] = 0;&#13;&#10;&#9;&#9;&#9;}&#13;&#10;&#9;&#9;}&#13;&#10;&#13;&#10;&#9;&#9;griglia[2][2] = 1; // macchina rossa&#13;&#10;&#9;&#9;griglia[1][5] = 2;&#13;&#10;&#9;&#9;griglia[2][5] = 3;&#13;&#10;&#9;&#9;griglia[3][5] = 4;&#13;&#10;&#9;&#9;griglia[4][1] = 5;&#13;&#10;&#9;&#9;griglia[0][3] = 6;&#13;&#10;&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#9;/**&#13;&#10;&#9; * Move car.&#13;&#10;&#9; *&#13;&#10;&#9; * @param row la colonna della macchian da spostare: può essere un numero qualsiasi ma viene fatto il controllo che sia tra 0 e 5 compresi&#13;&#10;&#9; * @param col the col&#13;&#10;&#9; * @param dir la direzione: 1. verso l'alto; 2. verso destra; 3. verso il basso; 4. verso sinistra.&#13;&#10;&#9; * @return true, if successful la macchina è spostata &#13;&#10;&#9; */&#13;&#10;&#9;public boolean moveCar(int row, int col, int dir) {&#13;&#10;&#9;&#9;if (row &lt; 0 || row &gt; 5 || col &lt; 0 || col &gt; 5 || dir &lt; 1 || dir &gt; 4) {&#13;&#10;&#9;&#9;&#9;// in tal caso ho sbagliato gli indici oppure ho indicato una&#13;&#10;&#9;&#9;&#9;// direzione inesistente&#13;&#10;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;if (griglia[row][col] == 0) {&#13;&#10;&#9;&#9;&#9;// in tal caso ho selezionato una casella vuota, non posso spostare&#13;&#10;&#9;&#9;&#9;// macchine&#13;&#10;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;} else {&#13;&#10;&#9;&#9;&#9;int nRow, nCol; // nuove coordinate della macchina&#13;&#10;&#9;&#9;&#9;if (dir == 1) {&#13;&#10;&#9;&#9;&#9;&#9;// verso l'alto&#13;&#10;&#9;&#9;&#9;&#9;if (row == 0)&#13;&#10;&#9;&#9;&#9;&#9;&#9;// voglio andare verso l'alto, ma sono al bordo&#13;&#10;&#9;&#9;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;&#9;&#9;nRow = row - 1;&#13;&#10;&#9;&#9;&#9;&#9;nCol = col;&#13;&#10;&#9;&#9;&#9;} else if (dir == 2) {&#13;&#10;&#9;&#9;&#9;&#9;// verso destra&#13;&#10;&#9;&#9;&#9;&#9;if (col == 5)&#13;&#10;&#9;&#9;&#9;&#9;&#9;// voglio andare verso destra, ma sono al bordo&#13;&#10;&#9;&#9;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;&#9;&#9;nCol = col + 1;&#13;&#10;&#9;&#9;&#9;&#9;nRow = row;&#13;&#10;&#9;&#9;&#9;} else if (dir == 3) {&#13;&#10;&#9;&#9;&#9;&#9;// verso il basso&#13;&#10;&#9;&#9;&#9;&#9;if (row == 5)&#13;&#10;&#9;&#9;&#9;&#9;&#9;// voglio andare verso il basso, ma sono al bordo&#13;&#10;&#9;&#9;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;&#9;&#9;nRow = row + 1;&#13;&#10;&#9;&#9;&#9;&#9;nCol = col;&#13;&#10;&#9;&#9;&#9;} else {&#13;&#10;&#9;&#9;&#9;&#9;assert (dir == 4);&#13;&#10;&#9;&#9;&#9;&#9;// verso sinistra&#13;&#10;&#9;&#9;&#9;&#9;if (col == 0)&#13;&#10;&#9;&#9;&#9;&#9;&#9;// in tal caso voglio andare verso sinistra, ma sono al&#13;&#10;&#9;&#9;&#9;&#9;&#9;// bordo&#13;&#10;&#9;&#9;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;&#9;&#9;nCol = col - 1;&#13;&#10;&#9;&#9;&#9;&#9;nRow = row;&#13;&#10;&#9;&#9;&#9;}&#13;&#10;&#9;&#9;&#9;if (griglia[nRow][nCol] != 0) {&#13;&#10;&#9;&#9;&#9;&#9;// la cella di destinazione è già occupata, non posso&#13;&#10;&#9;&#9;&#9;&#9;// spostare la macchinina&#13;&#10;&#9;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;&#9;} else {&#13;&#10;&#9;&#9;&#9;&#9;// la cella di destinazione è libera, sposto la macchina.&#13;&#10;&#9;&#9;&#9;&#9;griglia[nRow][nCol] = griglia[row][col];&#13;&#10;&#9;&#9;&#9;&#9;griglia[row][col] = 0;&#13;&#10;&#9;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;&#9;}&#13;&#10;&#9;&#9;}&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#9;/**&#13;&#10;&#9; * Red car at exit.&#13;&#10;&#9; *&#13;&#10;&#9; * @return true, se la macchina rossa è in uscita&#13;&#10;&#9; */&#13;&#10;&#9;public boolean redCarAtExit() {&#13;&#10;&#9;&#9;if (griglia[2][5] == 1) {&#13;&#10;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;} &#13;&#10;&#9;&#9;return false;&#13;&#10;&#9;}&#13;&#10;}" Filename="RushHour.java" Intrnl_Id="1"/>
+    </SrcFileList>
+    <CritList>
+        <CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+    </CritList>
+    <BoolOpList>
+        <BoolOp Arity="2" Intrnl_Id="2" Name="conditional or (||)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="00" Value="false"/>
+                <MapEntry BoolAssgnmnt="01" Value="true"/>
+                <MapEntry BoolAssgnmnt="12" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+    </BoolOpList>
+    <HierarchyLvlTypeList>
+        <HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="3"/>
+        <HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="4"/>
+        <HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="5"/>
+        <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="6"/>
+    </HierarchyLvlTypeList>
+    <MASTRoot>
+        <HierarchyLvl HierarchyLvlId="78" HierarchyLvlTypeId="6" Intrnl_Id="7" Name="default package">
+            <Header/>
+            <LocList/>
+            <HierarchyLvl HierarchyLvlId="77" HierarchyLvlTypeId="3" Intrnl_Id="8" Name="exe6">
+                <Header/>
+                <LocList/>
+                <HierarchyLvl HierarchyLvlId="76" HierarchyLvlTypeId="5" Intrnl_Id="9" Name="RushHour">
+                    <Header>
+                        <Loc EndOffset="38" SrcFileId="1" StartOffset="17"/>
+                    </Header>
+                    <LocList>
+                        <Loc EndOffset="2543" SrcFileId="1" StartOffset="17"/>
+                    </LocList>
+                    <HierarchyLvl HierarchyLvlId="73" HierarchyLvlTypeId="4" Intrnl_Id="10" Name="RushHour">
+                        <Header>
+                            <Loc EndOffset="84" SrcFileId="1" StartOffset="67"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="449" SrcFileId="1" StartOffset="67"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="11">
+                            <LocList>
+                                <Loc EndOffset="116" SrcFileId="1" StartOffset="92"/>
+                                <Loc EndOffset="291" SrcFileId="1" StartOffset="191"/>
+                                <Loc EndOffset="315" SrcFileId="1" StartOffset="297"/>
+                                <Loc EndOffset="355" SrcFileId="1" StartOffset="337"/>
+                                <Loc EndOffset="377" SrcFileId="1" StartOffset="359"/>
+                                <Loc EndOffset="399" SrcFileId="1" StartOffset="381"/>
+                                <Loc EndOffset="421" SrcFileId="1" StartOffset="403"/>
+                                <Loc EndOffset="443" SrcFileId="1" StartOffset="425"/>
+                            </LocList>
+                            <BasicStmnt CovItemId="S1" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="12">
+                                <LocList>
+                                    <Loc EndOffset="116" SrcFileId="1" StartOffset="92"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <LoopStmnt CovItemId="S2" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="13" MltplExecId="L1-2" MltplExecPrefix="exe6.RushHour.java" NvrExecId="L1-0" NvrExecPrefix="exe6.RushHour.java" OnceExecutedId="L1-1" OnceExecutedPrefix="exe6.RushHour.java" OptBodyExec="true">
+                                <StmntSeq Intrnl_Id="14">
+                                    <LocList>
+                                        <Loc EndOffset="286" SrcFileId="1" StartOffset="226"/>
+                                    </LocList>
+                                    <LoopStmnt CovItemId="S3" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="15" MltplExecId="L2-2" MltplExecPrefix="exe6.RushHour.java" NvrExecId="L2-0" NvrExecPrefix="exe6.RushHour.java" OnceExecutedId="L2-1" OnceExecutedPrefix="exe6.RushHour.java" OptBodyExec="true">
+                                        <StmntSeq Intrnl_Id="16">
+                                            <LocList>
+                                                <Loc EndOffset="280" SrcFileId="1" StartOffset="262"/>
+                                            </LocList>
+                                            <BasicStmnt CovItemId="S4" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="17">
+                                                <LocList>
+                                                    <Loc EndOffset="280" SrcFileId="1" StartOffset="262"/>
+                                                </LocList>
+                                            </BasicStmnt>
+                                        </StmntSeq>
+                                        <Keyword EndOffset="229" SrcFileId="1" StartOffset="226"/>
+                                        <LocList>
+                                            <Loc EndOffset="286" SrcFileId="1" StartOffset="226"/>
+                                        </LocList>
+                                        <RootTerm CovItemId="C2" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="18">
+                                            <BasicBoolTerm Intrnl_Id="19">
+                                                <LocList>
+                                                    <Loc EndOffset="248" SrcFileId="1" StartOffset="242"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                        </RootTerm>
+                                    </LoopStmnt>
+                                </StmntSeq>
+                                <Keyword EndOffset="194" SrcFileId="1" StartOffset="191"/>
+                                <LocList>
+                                    <Loc EndOffset="291" SrcFileId="1" StartOffset="191"/>
+                                </LocList>
+                                <RootTerm CovItemId="C1" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="20">
+                                    <BasicBoolTerm Intrnl_Id="21">
+                                        <LocList>
+                                            <Loc EndOffset="213" SrcFileId="1" StartOffset="207"/>
+                                        </LocList>
+                                    </BasicBoolTerm>
+                                </RootTerm>
+                            </LoopStmnt>
+                            <BasicStmnt CovItemId="S5" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="22">
+                                <LocList>
+                                    <Loc EndOffset="315" SrcFileId="1" StartOffset="297"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <BasicStmnt CovItemId="S6" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="23">
+                                <LocList>
+                                    <Loc EndOffset="355" SrcFileId="1" StartOffset="337"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <BasicStmnt CovItemId="S7" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="24">
+                                <LocList>
+                                    <Loc EndOffset="377" SrcFileId="1" StartOffset="359"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <BasicStmnt CovItemId="S8" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="25">
+                                <LocList>
+                                    <Loc EndOffset="399" SrcFileId="1" StartOffset="381"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <BasicStmnt CovItemId="S9" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="26">
+                                <LocList>
+                                    <Loc EndOffset="421" SrcFileId="1" StartOffset="403"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <BasicStmnt CovItemId="S10" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="27">
+                                <LocList>
+                                    <Loc EndOffset="443" SrcFileId="1" StartOffset="425"/>
+                                </LocList>
+                            </BasicStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="74" HierarchyLvlTypeId="4" Intrnl_Id="28" Name="moveCar">
+                        <Header>
+                            <Loc EndOffset="859" SrcFileId="1" StartOffset="810"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="2340" SrcFileId="1" StartOffset="810"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="29">
+                            <LocList>
+                                <Loc EndOffset="1052" SrcFileId="1" StartOffset="865"/>
+                                <Loc EndOffset="2336" SrcFileId="1" StartOffset="1056"/>
+                            </LocList>
+                            <CondStmnt CovItemId="S11" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="30">
+                                <Branch CovItemId="B1" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="31">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="1052" SrcFileId="1" StartOffset="933"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="32">
+                                        <LocList>
+                                            <Loc EndOffset="1047" SrcFileId="1" StartOffset="1034"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S12" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="33">
+                                            <LocList>
+                                                <Loc EndOffset="1047" SrcFileId="1" StartOffset="1034"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B2" CovItemPrefix="exe6.RushHour.java" Implct="true" Intrnl_Id="34">
+                                    <Cond/>
+                                    <LocList/>
+                                    <StmntSeq Intrnl_Id="35">
+                                        <LocList/>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="867" SrcFileId="1" StartOffset="865"/>
+                                <LocList>
+                                    <Loc EndOffset="1052" SrcFileId="1" StartOffset="865"/>
+                                </LocList>
+                                <RootTerm CovItemId="C3" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="36">
+                                    <OpTerm BooleanOpId="2" Intrnl_Id="37">
+                                        <OpTerm BooleanOpId="2" Intrnl_Id="38">
+                                            <OpTerm BooleanOpId="2" Intrnl_Id="39">
+                                                <OpTerm BooleanOpId="2" Intrnl_Id="40">
+                                                    <OpTerm BooleanOpId="2" Intrnl_Id="41">
+                                                        <BasicBoolTerm Intrnl_Id="42">
+                                                            <LocList>
+                                                                <Loc EndOffset="876" SrcFileId="1" StartOffset="869"/>
+                                                            </LocList>
+                                                        </BasicBoolTerm>
+                                                        <BasicBoolTerm Intrnl_Id="43">
+                                                            <LocList>
+                                                                <Loc EndOffset="887" SrcFileId="1" StartOffset="880"/>
+                                                            </LocList>
+                                                        </BasicBoolTerm>
+                                                        <LocList>
+                                                            <Loc EndOffset="879" SrcFileId="1" StartOffset="877"/>
+                                                        </LocList>
+                                                    </OpTerm>
+                                                    <BasicBoolTerm Intrnl_Id="44">
+                                                        <LocList>
+                                                            <Loc EndOffset="898" SrcFileId="1" StartOffset="891"/>
+                                                        </LocList>
+                                                    </BasicBoolTerm>
+                                                    <LocList>
+                                                        <Loc EndOffset="890" SrcFileId="1" StartOffset="888"/>
+                                                    </LocList>
+                                                </OpTerm>
+                                                <BasicBoolTerm Intrnl_Id="45">
+                                                    <LocList>
+                                                        <Loc EndOffset="909" SrcFileId="1" StartOffset="902"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                                <LocList>
+                                                    <Loc EndOffset="901" SrcFileId="1" StartOffset="899"/>
+                                                </LocList>
+                                            </OpTerm>
+                                            <BasicBoolTerm Intrnl_Id="46">
+                                                <LocList>
+                                                    <Loc EndOffset="920" SrcFileId="1" StartOffset="913"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <LocList>
+                                                <Loc EndOffset="912" SrcFileId="1" StartOffset="910"/>
+                                            </LocList>
+                                        </OpTerm>
+                                        <BasicBoolTerm Intrnl_Id="47">
+                                            <LocList>
+                                                <Loc EndOffset="931" SrcFileId="1" StartOffset="924"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="923" SrcFileId="1" StartOffset="921"/>
+                                        </LocList>
+                                    </OpTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                            <CondStmnt CovItemId="S13" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="48">
+                                <Branch CovItemId="B3" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="49">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="1196" SrcFileId="1" StartOffset="1084"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="50">
+                                        <LocList>
+                                            <Loc EndOffset="1191" SrcFileId="1" StartOffset="1178"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S14" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="51">
+                                            <LocList>
+                                                <Loc EndOffset="1191" SrcFileId="1" StartOffset="1178"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B4" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="52">
+                                    <Cond>
+                                        <Loc EndOffset="1201" SrcFileId="1" StartOffset="1197"/>
+                                    </Cond>
+                                    <LocList>
+                                        <Loc EndOffset="2336" SrcFileId="1" StartOffset="1202"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="53">
+                                        <LocList>
+                                            <Loc EndOffset="2012" SrcFileId="1" StartOffset="1263"/>
+                                            <Loc EndOffset="2331" SrcFileId="1" StartOffset="2017"/>
+                                        </LocList>
+                                        <CondStmnt CovItemId="S15" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="54">
+                                            <Branch CovItemId="B5" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="55">
+                                                <Cond/>
+                                                <LocList>
+                                                    <Loc EndOffset="1436" SrcFileId="1" StartOffset="1277"/>
+                                                </LocList>
+                                                <StmntSeq Intrnl_Id="56">
+                                                    <LocList>
+                                                        <Loc EndOffset="1392" SrcFileId="1" StartOffset="1305"/>
+                                                        <Loc EndOffset="1413" SrcFileId="1" StartOffset="1398"/>
+                                                        <Loc EndOffset="1430" SrcFileId="1" StartOffset="1419"/>
+                                                    </LocList>
+                                                    <CondStmnt CovItemId="S16" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="57">
+                                                        <Branch CovItemId="B7" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="58">
+                                                            <Cond/>
+                                                            <LocList>
+                                                                <Loc EndOffset="1392" SrcFileId="1" StartOffset="1379"/>
+                                                            </LocList>
+                                                            <StmntSeq Intrnl_Id="59">
+                                                                <LocList>
+                                                                    <Loc EndOffset="1392" SrcFileId="1" StartOffset="1379"/>
+                                                                </LocList>
+                                                                <BasicStmnt CovItemId="S17" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="60">
+                                                                    <LocList>
+                                                                        <Loc EndOffset="1392" SrcFileId="1" StartOffset="1379"/>
+                                                                    </LocList>
+                                                                </BasicStmnt>
+                                                            </StmntSeq>
+                                                        </Branch>
+                                                        <Branch CovItemId="B8" CovItemPrefix="exe6.RushHour.java" Implct="true" Intrnl_Id="61">
+                                                            <Cond/>
+                                                            <LocList/>
+                                                            <StmntSeq Intrnl_Id="62">
+                                                                <LocList/>
+                                                            </StmntSeq>
+                                                        </Branch>
+                                                        <Keyword EndOffset="1307" SrcFileId="1" StartOffset="1305"/>
+                                                        <LocList>
+                                                            <Loc EndOffset="1392" SrcFileId="1" StartOffset="1305"/>
+                                                        </LocList>
+                                                        <RootTerm CovItemId="C6" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="63">
+                                                            <BasicBoolTerm Intrnl_Id="64">
+                                                                <LocList>
+                                                                    <Loc EndOffset="1317" SrcFileId="1" StartOffset="1309"/>
+                                                                </LocList>
+                                                            </BasicBoolTerm>
+                                                        </RootTerm>
+                                                    </CondStmnt>
+                                                    <BasicStmnt CovItemId="S18" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="65">
+                                                        <LocList>
+                                                            <Loc EndOffset="1413" SrcFileId="1" StartOffset="1398"/>
+                                                        </LocList>
+                                                    </BasicStmnt>
+                                                    <BasicStmnt CovItemId="S19" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="66">
+                                                        <LocList>
+                                                            <Loc EndOffset="1430" SrcFileId="1" StartOffset="1419"/>
+                                                        </LocList>
+                                                    </BasicStmnt>
+                                                </StmntSeq>
+                                            </Branch>
+                                            <Branch CovItemId="B6" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="67">
+                                                <Cond>
+                                                    <Loc EndOffset="1441" SrcFileId="1" StartOffset="1437"/>
+                                                </Cond>
+                                                <LocList>
+                                                    <Loc EndOffset="2012" SrcFileId="1" StartOffset="1442"/>
+                                                </LocList>
+                                                <StmntSeq Intrnl_Id="68">
+                                                    <LocList>
+                                                        <Loc EndOffset="2012" SrcFileId="1" StartOffset="1442"/>
+                                                    </LocList>
+                                                    <CondStmnt CovItemId="S20" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="69">
+                                                        <Branch CovItemId="B9" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="70">
+                                                            <Cond/>
+                                                            <LocList>
+                                                                <Loc EndOffset="1615" SrcFileId="1" StartOffset="1456"/>
+                                                            </LocList>
+                                                            <StmntSeq Intrnl_Id="71">
+                                                                <LocList>
+                                                                    <Loc EndOffset="1571" SrcFileId="1" StartOffset="1484"/>
+                                                                    <Loc EndOffset="1592" SrcFileId="1" StartOffset="1577"/>
+                                                                    <Loc EndOffset="1609" SrcFileId="1" StartOffset="1598"/>
+                                                                </LocList>
+                                                                <CondStmnt CovItemId="S21" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="72">
+                                                                    <Branch CovItemId="B11" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="73">
+                                                                        <Cond/>
+                                                                        <LocList>
+                                                                            <Loc EndOffset="1571" SrcFileId="1" StartOffset="1558"/>
+                                                                        </LocList>
+                                                                        <StmntSeq Intrnl_Id="74">
+                                                                            <LocList>
+                                                                                <Loc EndOffset="1571" SrcFileId="1" StartOffset="1558"/>
+                                                                            </LocList>
+                                                                            <BasicStmnt CovItemId="S22" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="75">
+                                                                                <LocList>
+                                                                                    <Loc EndOffset="1571" SrcFileId="1" StartOffset="1558"/>
+                                                                                </LocList>
+                                                                            </BasicStmnt>
+                                                                        </StmntSeq>
+                                                                    </Branch>
+                                                                    <Branch CovItemId="B12" CovItemPrefix="exe6.RushHour.java" Implct="true" Intrnl_Id="76">
+                                                                        <Cond/>
+                                                                        <LocList/>
+                                                                        <StmntSeq Intrnl_Id="77">
+                                                                            <LocList/>
+                                                                        </StmntSeq>
+                                                                    </Branch>
+                                                                    <Keyword EndOffset="1486" SrcFileId="1" StartOffset="1484"/>
+                                                                    <LocList>
+                                                                        <Loc EndOffset="1571" SrcFileId="1" StartOffset="1484"/>
+                                                                    </LocList>
+                                                                    <RootTerm CovItemId="C8" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="78">
+                                                                        <BasicBoolTerm Intrnl_Id="79">
+                                                                            <LocList>
+                                                                                <Loc EndOffset="1496" SrcFileId="1" StartOffset="1488"/>
+                                                                            </LocList>
+                                                                        </BasicBoolTerm>
+                                                                    </RootTerm>
+                                                                </CondStmnt>
+                                                                <BasicStmnt CovItemId="S23" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="80">
+                                                                    <LocList>
+                                                                        <Loc EndOffset="1592" SrcFileId="1" StartOffset="1577"/>
+                                                                    </LocList>
+                                                                </BasicStmnt>
+                                                                <BasicStmnt CovItemId="S24" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="81">
+                                                                    <LocList>
+                                                                        <Loc EndOffset="1609" SrcFileId="1" StartOffset="1598"/>
+                                                                    </LocList>
+                                                                </BasicStmnt>
+                                                            </StmntSeq>
+                                                        </Branch>
+                                                        <Branch CovItemId="B10" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="82">
+                                                            <Cond>
+                                                                <Loc EndOffset="1620" SrcFileId="1" StartOffset="1616"/>
+                                                            </Cond>
+                                                            <LocList>
+                                                                <Loc EndOffset="2012" SrcFileId="1" StartOffset="1621"/>
+                                                            </LocList>
+                                                            <StmntSeq Intrnl_Id="83">
+                                                                <LocList>
+                                                                    <Loc EndOffset="2012" SrcFileId="1" StartOffset="1621"/>
+                                                                </LocList>
+                                                                <CondStmnt CovItemId="S25" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="84">
+                                                                    <Branch CovItemId="B13" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="85">
+                                                                        <Cond/>
+                                                                        <LocList>
+                                                                            <Loc EndOffset="1798" SrcFileId="1" StartOffset="1635"/>
+                                                                        </LocList>
+                                                                        <StmntSeq Intrnl_Id="86">
+                                                                            <LocList>
+                                                                                <Loc EndOffset="1754" SrcFileId="1" StartOffset="1665"/>
+                                                                                <Loc EndOffset="1775" SrcFileId="1" StartOffset="1760"/>
+                                                                                <Loc EndOffset="1792" SrcFileId="1" StartOffset="1781"/>
+                                                                            </LocList>
+                                                                            <CondStmnt CovItemId="S26" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="87">
+                                                                                <Branch CovItemId="B15" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="88">
+                                                                                    <Cond/>
+                                                                                    <LocList>
+                                                                                        <Loc EndOffset="1754" SrcFileId="1" StartOffset="1741"/>
+                                                                                    </LocList>
+                                                                                    <StmntSeq Intrnl_Id="89">
+                                                                                        <LocList>
+                                                                                            <Loc EndOffset="1754" SrcFileId="1" StartOffset="1741"/>
+                                                                                        </LocList>
+                                                                                        <BasicStmnt CovItemId="S27" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="90">
+                                                                                            <LocList>
+                                                                                                <Loc EndOffset="1754" SrcFileId="1" StartOffset="1741"/>
+                                                                                            </LocList>
+                                                                                        </BasicStmnt>
+                                                                                    </StmntSeq>
+                                                                                </Branch>
+                                                                                <Branch CovItemId="B16" CovItemPrefix="exe6.RushHour.java" Implct="true" Intrnl_Id="91">
+                                                                                    <Cond/>
+                                                                                    <LocList/>
+                                                                                    <StmntSeq Intrnl_Id="92">
+                                                                                        <LocList/>
+                                                                                    </StmntSeq>
+                                                                                </Branch>
+                                                                                <Keyword EndOffset="1667" SrcFileId="1" StartOffset="1665"/>
+                                                                                <LocList>
+                                                                                    <Loc EndOffset="1754" SrcFileId="1" StartOffset="1665"/>
+                                                                                </LocList>
+                                                                                <RootTerm CovItemId="C10" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="93">
+                                                                                    <BasicBoolTerm Intrnl_Id="94">
+                                                                                        <LocList>
+                                                                                            <Loc EndOffset="1677" SrcFileId="1" StartOffset="1669"/>
+                                                                                        </LocList>
+                                                                                    </BasicBoolTerm>
+                                                                                </RootTerm>
+                                                                            </CondStmnt>
+                                                                            <BasicStmnt CovItemId="S28" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="95">
+                                                                                <LocList>
+                                                                                    <Loc EndOffset="1775" SrcFileId="1" StartOffset="1760"/>
+                                                                                </LocList>
+                                                                            </BasicStmnt>
+                                                                            <BasicStmnt CovItemId="S29" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="96">
+                                                                                <LocList>
+                                                                                    <Loc EndOffset="1792" SrcFileId="1" StartOffset="1781"/>
+                                                                                </LocList>
+                                                                            </BasicStmnt>
+                                                                        </StmntSeq>
+                                                                    </Branch>
+                                                                    <Branch CovItemId="B14" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="97">
+                                                                        <Cond>
+                                                                            <Loc EndOffset="1803" SrcFileId="1" StartOffset="1799"/>
+                                                                        </Cond>
+                                                                        <LocList>
+                                                                            <Loc EndOffset="2012" SrcFileId="1" StartOffset="1804"/>
+                                                                        </LocList>
+                                                                        <StmntSeq Intrnl_Id="98">
+                                                                            <LocList>
+                                                                                <Loc EndOffset="1968" SrcFileId="1" StartOffset="1858"/>
+                                                                                <Loc EndOffset="1989" SrcFileId="1" StartOffset="1974"/>
+                                                                                <Loc EndOffset="2006" SrcFileId="1" StartOffset="1995"/>
+                                                                            </LocList>
+                                                                            <CondStmnt CovItemId="S30" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="99">
+                                                                                <Branch CovItemId="B17" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="100">
+                                                                                    <Cond/>
+                                                                                    <LocList>
+                                                                                        <Loc EndOffset="1968" SrcFileId="1" StartOffset="1955"/>
+                                                                                    </LocList>
+                                                                                    <StmntSeq Intrnl_Id="101">
+                                                                                        <LocList>
+                                                                                            <Loc EndOffset="1968" SrcFileId="1" StartOffset="1955"/>
+                                                                                        </LocList>
+                                                                                        <BasicStmnt CovItemId="S31" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="102">
+                                                                                            <LocList>
+                                                                                                <Loc EndOffset="1968" SrcFileId="1" StartOffset="1955"/>
+                                                                                            </LocList>
+                                                                                        </BasicStmnt>
+                                                                                    </StmntSeq>
+                                                                                </Branch>
+                                                                                <Branch CovItemId="B18" CovItemPrefix="exe6.RushHour.java" Implct="true" Intrnl_Id="103">
+                                                                                    <Cond/>
+                                                                                    <LocList/>
+                                                                                    <StmntSeq Intrnl_Id="104">
+                                                                                        <LocList/>
+                                                                                    </StmntSeq>
+                                                                                </Branch>
+                                                                                <Keyword EndOffset="1860" SrcFileId="1" StartOffset="1858"/>
+                                                                                <LocList>
+                                                                                    <Loc EndOffset="1968" SrcFileId="1" StartOffset="1858"/>
+                                                                                </LocList>
+                                                                                <RootTerm CovItemId="C11" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="105">
+                                                                                    <BasicBoolTerm Intrnl_Id="106">
+                                                                                        <LocList>
+                                                                                            <Loc EndOffset="1870" SrcFileId="1" StartOffset="1862"/>
+                                                                                        </LocList>
+                                                                                    </BasicBoolTerm>
+                                                                                </RootTerm>
+                                                                            </CondStmnt>
+                                                                            <BasicStmnt CovItemId="S32" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="107">
+                                                                                <LocList>
+                                                                                    <Loc EndOffset="1989" SrcFileId="1" StartOffset="1974"/>
+                                                                                </LocList>
+                                                                            </BasicStmnt>
+                                                                            <BasicStmnt CovItemId="S33" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="108">
+                                                                                <LocList>
+                                                                                    <Loc EndOffset="2006" SrcFileId="1" StartOffset="1995"/>
+                                                                                </LocList>
+                                                                            </BasicStmnt>
+                                                                        </StmntSeq>
+                                                                    </Branch>
+                                                                    <Keyword EndOffset="1623" SrcFileId="1" StartOffset="1621"/>
+                                                                    <LocList>
+                                                                        <Loc EndOffset="2012" SrcFileId="1" StartOffset="1621"/>
+                                                                    </LocList>
+                                                                    <RootTerm CovItemId="C9" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="109">
+                                                                        <BasicBoolTerm Intrnl_Id="110">
+                                                                            <LocList>
+                                                                                <Loc EndOffset="1633" SrcFileId="1" StartOffset="1625"/>
+                                                                            </LocList>
+                                                                        </BasicBoolTerm>
+                                                                    </RootTerm>
+                                                                </CondStmnt>
+                                                            </StmntSeq>
+                                                        </Branch>
+                                                        <Keyword EndOffset="1444" SrcFileId="1" StartOffset="1442"/>
+                                                        <LocList>
+                                                            <Loc EndOffset="2012" SrcFileId="1" StartOffset="1442"/>
+                                                        </LocList>
+                                                        <RootTerm CovItemId="C7" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="111">
+                                                            <BasicBoolTerm Intrnl_Id="112">
+                                                                <LocList>
+                                                                    <Loc EndOffset="1454" SrcFileId="1" StartOffset="1446"/>
+                                                                </LocList>
+                                                            </BasicBoolTerm>
+                                                        </RootTerm>
+                                                    </CondStmnt>
+                                                </StmntSeq>
+                                            </Branch>
+                                            <Keyword EndOffset="1265" SrcFileId="1" StartOffset="1263"/>
+                                            <LocList>
+                                                <Loc EndOffset="2012" SrcFileId="1" StartOffset="1263"/>
+                                            </LocList>
+                                            <RootTerm CovItemId="C5" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="113">
+                                                <BasicBoolTerm Intrnl_Id="114">
+                                                    <LocList>
+                                                        <Loc EndOffset="1275" SrcFileId="1" StartOffset="1267"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                            </RootTerm>
+                                        </CondStmnt>
+                                        <CondStmnt CovItemId="S34" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="115">
+                                            <Branch CovItemId="B19" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="116">
+                                                <Cond/>
+                                                <LocList>
+                                                    <Loc EndOffset="2163" SrcFileId="1" StartOffset="2047"/>
+                                                </LocList>
+                                                <StmntSeq Intrnl_Id="117">
+                                                    <LocList>
+                                                        <Loc EndOffset="2157" SrcFileId="1" StartOffset="2144"/>
+                                                    </LocList>
+                                                    <BasicStmnt CovItemId="S35" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="118">
+                                                        <LocList>
+                                                            <Loc EndOffset="2157" SrcFileId="1" StartOffset="2144"/>
+                                                        </LocList>
+                                                    </BasicStmnt>
+                                                </StmntSeq>
+                                            </Branch>
+                                            <Branch CovItemId="B20" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="119">
+                                                <Cond>
+                                                    <Loc EndOffset="2168" SrcFileId="1" StartOffset="2164"/>
+                                                </Cond>
+                                                <LocList>
+                                                    <Loc EndOffset="2331" SrcFileId="1" StartOffset="2169"/>
+                                                </LocList>
+                                                <StmntSeq Intrnl_Id="120">
+                                                    <LocList>
+                                                        <Loc EndOffset="2279" SrcFileId="1" StartOffset="2239"/>
+                                                        <Loc EndOffset="2307" SrcFileId="1" StartOffset="2285"/>
+                                                        <Loc EndOffset="2325" SrcFileId="1" StartOffset="2313"/>
+                                                    </LocList>
+                                                    <BasicStmnt CovItemId="S36" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="121">
+                                                        <LocList>
+                                                            <Loc EndOffset="2279" SrcFileId="1" StartOffset="2239"/>
+                                                        </LocList>
+                                                    </BasicStmnt>
+                                                    <BasicStmnt CovItemId="S37" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="122">
+                                                        <LocList>
+                                                            <Loc EndOffset="2307" SrcFileId="1" StartOffset="2285"/>
+                                                        </LocList>
+                                                    </BasicStmnt>
+                                                    <BasicStmnt CovItemId="S38" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="123">
+                                                        <LocList>
+                                                            <Loc EndOffset="2325" SrcFileId="1" StartOffset="2313"/>
+                                                        </LocList>
+                                                    </BasicStmnt>
+                                                </StmntSeq>
+                                            </Branch>
+                                            <Keyword EndOffset="2019" SrcFileId="1" StartOffset="2017"/>
+                                            <LocList>
+                                                <Loc EndOffset="2331" SrcFileId="1" StartOffset="2017"/>
+                                            </LocList>
+                                            <RootTerm CovItemId="C12" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="124">
+                                                <BasicBoolTerm Intrnl_Id="125">
+                                                    <LocList>
+                                                        <Loc EndOffset="2045" SrcFileId="1" StartOffset="2021"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                            </RootTerm>
+                                        </CondStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="1058" SrcFileId="1" StartOffset="1056"/>
+                                <LocList>
+                                    <Loc EndOffset="2336" SrcFileId="1" StartOffset="1056"/>
+                                </LocList>
+                                <RootTerm CovItemId="C4" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="126">
+                                    <BasicBoolTerm Intrnl_Id="127">
+                                        <LocList>
+                                            <Loc EndOffset="1082" SrcFileId="1" StartOffset="1060"/>
+                                        </LocList>
+                                    </BasicBoolTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="75" HierarchyLvlTypeId="4" Intrnl_Id="128" Name="redCarAtExit">
+                        <Header>
+                            <Loc EndOffset="2465" SrcFileId="1" StartOffset="2436"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="2540" SrcFileId="1" StartOffset="2436"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="129">
+                            <LocList>
+                                <Loc EndOffset="2518" SrcFileId="1" StartOffset="2471"/>
+                                <Loc EndOffset="2536" SrcFileId="1" StartOffset="2523"/>
+                            </LocList>
+                            <CondStmnt CovItemId="S39" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="130">
+                                <Branch CovItemId="B21" CovItemPrefix="exe6.RushHour.java" Implct="false" Intrnl_Id="131">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="2518" SrcFileId="1" StartOffset="2495"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="132">
+                                        <LocList>
+                                            <Loc EndOffset="2513" SrcFileId="1" StartOffset="2501"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S40" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="133">
+                                            <LocList>
+                                                <Loc EndOffset="2513" SrcFileId="1" StartOffset="2501"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B22" CovItemPrefix="exe6.RushHour.java" Implct="true" Intrnl_Id="134">
+                                    <Cond/>
+                                    <LocList/>
+                                    <StmntSeq Intrnl_Id="135">
+                                        <LocList/>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="2473" SrcFileId="1" StartOffset="2471"/>
+                                <LocList>
+                                    <Loc EndOffset="2518" SrcFileId="1" StartOffset="2471"/>
+                                </LocList>
+                                <RootTerm CovItemId="C13" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="136">
+                                    <BasicBoolTerm Intrnl_Id="137">
+                                        <LocList>
+                                            <Loc EndOffset="2493" SrcFileId="1" StartOffset="2475"/>
+                                        </LocList>
+                                    </BasicBoolTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                            <BasicStmnt CovItemId="S41" CovItemPrefix="exe6.RushHour.java" Intrnl_Id="138">
+                                <LocList>
+                                    <Loc EndOffset="2536" SrcFileId="1" StartOffset="2523"/>
+                                </LocList>
+                            </BasicStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                </HierarchyLvl>
+            </HierarchyLvl>
+        </HierarchyLvl>
+    </MASTRoot>
+</TestSessionContainer>
