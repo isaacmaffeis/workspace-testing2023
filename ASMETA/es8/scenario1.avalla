@@ -1,0 +1,40 @@
+//// starting scenario
+scenario scenario1
+load LightArray.asm
+check status(5) = ON;
+check status(3) = ON;
+check status(4) = ON;
+check status(6) = ON;
+check status(7) = ON;
+check status(8) = ON;
+check status(9) = ON;
+check status(10) = ON;
+check status(1) = ON;
+check status(2) = ON;
+set command := NONE;
+step
+check status(5) = ON;
+set command := TOGGLE;
+set toggle := 5;
+step
+check status(5) = OFF;
+check status(3) = ON;
+set command := TOGGLE;
+set toggle := 3;
+step
+check status(5) = OFF;
+check status(3) = OFF;
+set command := ALLOFF;
+set toggle := 3;
+step
+check status(5) = OFF;
+check status(3) = OFF;
+check status(4) = OFF;
+check status(6) = OFF;
+check status(7) = OFF;
+check status(8) = OFF;
+check status(9) = OFF;
+check status(10) = OFF;
+check status(1) = OFF;
+check status(2) = OFF;
+step

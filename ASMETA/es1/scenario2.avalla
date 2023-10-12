@@ -1,0 +1,8 @@
+scenario scenario2
+
+load euclide2.asm
+
+set numA_init := 6409;
+set numB_init := 3289;
+step until numA = numB;
+check numA = 13;

@@ -1,0 +1,67 @@
+scenario scenario1
+
+load CoffeeMachine.asm
+
+set user_coin := FIFTY_CENT;
+step
+check money_box = 1;
+check availability(MILK) = 9;
+
+set user_coin := FIFTY_CENT;
+step
+check money_box = 2;
+check availability(MILK) = 8;
+
+set user_coin := FIFTY_CENT;
+step
+check money_box = 3;
+check availability(MILK) = 7;
+
+set user_coin := FIFTY_CENT;
+step
+check money_box = 4;
+check availability(MILK) = 6;
+
+set user_coin := FIFTY_CENT;
+step
+check money_box = 5;
+check availability(MILK) = 5;
+
+set user_coin := FIFTY_CENT;
+step
+check money_box = 6;
+check availability(MILK) = 4;
+
+set user_coin := FIFTY_CENT;
+step
+check money_box = 7;
+check availability(MILK) = 3;
+
+set user_coin := FIFTY_CENT;
+step
+check money_box = 8;
+check availability(MILK) = 2;
+
+set user_coin := FIFTY_CENT;
+step
+check money_box = 9;
+check availability(MILK) = 1;
+
+set user_coin := FIFTY_CENT;
+step
+check money_box = 10;
+check availability(MILK) = 0;
+
+// add one over the limit
+set user_coin := FIFTY_CENT;
+step
+check money_box = 10;
+check availability(MILK) = 0;
+check status = WORKING;
+
+set user_coin := ONE_EURO;
+step until money_box = 25;
+check status = WORKING;
+
+step
+check status = FULL_MONEY;

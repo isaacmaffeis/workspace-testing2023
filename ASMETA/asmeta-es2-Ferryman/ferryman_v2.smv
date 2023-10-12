@@ -1,0 +1,70 @@
+--file G:\.shortcut-targets-by-id\1LodlyCyMzQcaYN5eYeB-QDnlV6fsMZNS\asmetaGSSI\codiceAsmetaCorsoGSSI\verification\ferryman_v2.smv
+-- options: flatten? false
+MODULE main
+	VAR
+		position_CABBAGE: {LEFT, RIGHT, SIDE_UNDEF}; --controlled
+		position_FERRYMAN: {LEFT, RIGHT, SIDE_UNDEF}; --controlled
+		position_GOAT: {LEFT, RIGHT, SIDE_UNDEF}; --controlled
+		position_WOLF: {LEFT, RIGHT, SIDE_UNDEF}; --controlled
+		--declaration of choose variables
+		var_$a_0: {CABBAGE, FERRYMAN, GOAT, WOLF};
+		var_$c_1: {CABBAGE, FERRYMAN, GOAT, WOLF};
+	DEFINE
+		goodSituationSide_CABBAGE_FERRYMAN_LEFT := TRUE;
+		goodSituationSide_CABBAGE_FERRYMAN_RIGHT := TRUE;
+		goodSituationSide_FERRYMAN_FERRYMAN_RIGHT := TRUE;
+		goodSituationSide_FERRYMAN_GOAT_LEFT := TRUE;
+		goodSituationSide_FERRYMAN_WOLF_RIGHT := TRUE;
+		goodSituationSide_GOAT_FERRYMAN_LEFT := TRUE;
+		goodSituationSide_GOAT_FERRYMAN_RIGHT := TRUE;
+		goodSituationSide_GOAT_GOAT_LEFT := TRUE;
+		goodSituationSide_GOAT_GOAT_RIGHT := TRUE;
+		goodSituationSide_GOAT_WOLF_LEFT := !((position_WOLF = LEFT) & (position_GOAT = LEFT));
+		goodSituationSide_GOAT_WOLF_RIGHT := !((position_WOLF = RIGHT) & (position_GOAT = RIGHT));
+		goodSituationSide_WOLF_CABBAGE_LEFT := TRUE;
+		goodSituationSide_WOLF_CABBAGE_RIGHT := TRUE;
+		goodSituationSide_WOLF_FERRYMAN_LEFT := TRUE;
+		goodSituationSide_WOLF_FERRYMAN_RIGHT := TRUE;
+		goodSituationSide_WOLF_GOAT_LEFT := !((position_WOLF = LEFT) & (position_GOAT = LEFT));
+		goodSituationSide_WOLF_GOAT_RIGHT := !((position_WOLF = RIGHT) & (position_GOAT = RIGHT));
+	CONSTANTS ACTORS_UNDEF, CABBAGE, FERRYMAN, GOAT, WOLF, SIDE_UNDEF, LEFT, RIGHT;
+	ASSIGN
+		init(position_CABBAGE) := LEFT;
+		init(position_FERRYMAN) := LEFT;
+		init(position_GOAT) := LEFT;
+		init(position_WOLF) := LEFT;
+		next(position_CABBAGE) :=
+			case
+				((position_FERRYMAN = LEFT) & ((position_CABBAGE = LEFT) & (goodSituationSide_WOLF_GOAT_LEFT & goodSituationSide_GOAT_WOLF_LEFT)) & (var_$a_0 = CABBAGE)): RIGHT;
+				((!((position_CABBAGE = RIGHT) & (position_WOLF = RIGHT) & (position_FERRYMAN = RIGHT) & (position_GOAT = RIGHT)) & (position_FERRYMAN = RIGHT)) & ((position_CABBAGE = RIGHT) & (position_GOAT = RIGHT) & (position_CABBAGE = RIGHT)) & (var_$c_1 = CABBAGE)): LEFT;
+				TRUE: position_CABBAGE;
+			esac;
+		next(position_FERRYMAN) :=
+			case
+				(position_FERRYMAN = LEFT): RIGHT;
+				(!((position_CABBAGE = RIGHT) & (position_WOLF = RIGHT) & (position_FERRYMAN = RIGHT) & (position_GOAT = RIGHT)) & (position_FERRYMAN = RIGHT)): LEFT;
+				TRUE: position_FERRYMAN;
+			esac;
+		next(position_GOAT) :=
+			case
+				((var_$c_1 = GOAT) & (!((position_CABBAGE = RIGHT) & (position_WOLF = RIGHT) & (position_FERRYMAN = RIGHT) & (position_GOAT = RIGHT)) & (position_FERRYMAN = RIGHT)) & (((position_CABBAGE = RIGHT) & (position_GOAT = RIGHT) | !(goodSituationSide_GOAT_WOLF_RIGHT)) & (position_GOAT = RIGHT))): LEFT;
+				((position_FERRYMAN = LEFT) & (var_$a_0 = GOAT) & (position_GOAT = LEFT)): RIGHT;
+				TRUE: position_GOAT;
+			esac;
+		next(position_WOLF) :=
+			case
+				((var_$a_0 = WOLF) & (position_FERRYMAN = LEFT) & ((position_WOLF = LEFT) & !((position_CABBAGE = LEFT) & (position_GOAT = LEFT)))): RIGHT;
+				((!((position_CABBAGE = RIGHT) & (position_WOLF = RIGHT) & (position_FERRYMAN = RIGHT) & (position_GOAT = RIGHT)) & (position_FERRYMAN = RIGHT)) & (var_$c_1 = WOLF) & (!(goodSituationSide_WOLF_GOAT_RIGHT) & (position_WOLF = RIGHT))): LEFT;
+				TRUE: position_WOLF;
+			esac;
+	INVAR	((((position_CABBAGE = LEFT) & (goodSituationSide_WOLF_GOAT_LEFT & goodSituationSide_GOAT_WOLF_LEFT)) & (var_$a_0 = CABBAGE)) | ((var_$a_0 = WOLF) & ((position_WOLF = LEFT) & !((position_CABBAGE = LEFT) & (position_GOAT = LEFT)))) | (!(position_GOAT = LEFT) & !((position_CABBAGE = LEFT) & (goodSituationSide_WOLF_GOAT_LEFT & goodSituationSide_GOAT_WOLF_LEFT)) & !((position_WOLF = LEFT) & !((position_CABBAGE = LEFT) & (position_GOAT = LEFT)))) | ((var_$a_0 = GOAT) & (position_GOAT = LEFT)));
+	INVAR	((!(((position_CABBAGE = RIGHT) & (position_GOAT = RIGHT) | !(goodSituationSide_GOAT_WOLF_RIGHT)) & (position_GOAT = RIGHT)) & !(!(goodSituationSide_WOLF_GOAT_RIGHT) & (position_WOLF = RIGHT)) & !((position_CABBAGE = RIGHT) & (position_GOAT = RIGHT) & (position_CABBAGE = RIGHT))) | (((position_CABBAGE = RIGHT) & (position_GOAT = RIGHT) & (position_CABBAGE = RIGHT)) & (var_$c_1 = CABBAGE)) | ((var_$c_1 = WOLF) & (!(goodSituationSide_WOLF_GOAT_RIGHT) & (position_WOLF = RIGHT))) | ((var_$c_1 = GOAT) & (((position_CABBAGE = RIGHT) & (position_GOAT = RIGHT) | !(goodSituationSide_GOAT_WOLF_RIGHT)) & (position_GOAT = RIGHT))));
+--CTL properties
+CTLSPEC NAME ctl0 := AG(((position_GOAT = position_CABBAGE) -> (position_GOAT = position_FERRYMAN)));
+CTLSPEC NAME ctl1 := AG(((position_WOLF = position_GOAT) -> (position_WOLF = position_FERRYMAN)));
+CTLSPEC NAME ctl2 := EF(((position_CABBAGE = RIGHT) & (position_WOLF = RIGHT) & (position_FERRYMAN = RIGHT) & (position_GOAT = RIGHT)));
+CTLSPEC NAME ctl3 := !(EF(((position_CABBAGE = RIGHT) & (position_WOLF = RIGHT) & (position_FERRYMAN = RIGHT) & (position_GOAT = RIGHT))));
+CTLSPEC NAME ctl4 := EF(((position_FERRYMAN = LEFT) & (((position_WOLF = LEFT) & (position_GOAT = LEFT)) & (position_CABBAGE = RIGHT))));
+--AsmetaL invariants
+CTLSPEC	AG(((position_GOAT = position_CABBAGE) -> (position_GOAT = position_FERRYMAN)));
+CTLSPEC	AG(((position_WOLF = position_GOAT) -> (position_WOLF = position_FERRYMAN)));

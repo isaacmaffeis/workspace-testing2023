@@ -1,0 +1,6 @@
+scenario scenario1
+
+load euclide.asm
+
+step until numA = numB;
+check numA = 13;

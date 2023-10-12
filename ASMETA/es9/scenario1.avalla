@@ -1,0 +1,62 @@
+//// starting scenario
+scenario scenario1
+load silos.asm
+check capacita(3) = 1;
+check capacita(2) = 1;
+check capacita(1) = 1;
+check status = GRU;
+set cilindro := 1;
+step
+check capacita(3) = 1;
+check capacita(2) = 1;
+check capacita(1) > 1;
+check status = NASTRO;
+set cilindro := 1;
+step
+check capacita(3) = 0;
+check capacita(2) = 0;
+check capacita(1) < 7;
+check status = GRU;
+set cilindro := 1;
+step
+check capacita(3) = 0;
+check capacita(2) = 0;
+check capacita(1) > 0;
+check status = NASTRO;
+set cilindro := 1;
+step
+check capacita(3) = 0;
+check capacita(2) = 0;
+check capacita(1) < 10;
+check status = GRU;
+set cilindro := 1;
+step
+check capacita(3) = 0;
+check capacita(2) = 0;
+check capacita(1) < 10;
+check status = NASTRO;
+set cilindro := 1;
+step
+check capacita(3) = 0;
+check capacita(2) = 0;
+check capacita(1) < 10;
+check status = GRU;
+set cilindro := 2;
+step
+check capacita(3) = 0;
+check capacita(2) > 0;
+check capacita(1) < 10;
+check status = NASTRO;
+set cilindro := 2;
+step
+check capacita(3) = 0;
+check capacita(2) < 10;
+check capacita(1) < 10;
+check status = GRU;
+set cilindro := 3;
+step
+check capacita(3) > 0;
+check capacita(2) < 10;
+check capacita(1) < 10;
+check status = NASTRO;
+step
