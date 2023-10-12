@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1680905174370" TestSessionContainerId="6a481a0f-aba4-47cb-9a90-fe250c10e1a2" version="1.0">
+    <SrcFileList>
+        <SrcFile Content="package exe5;&#13;&#10;&#13;&#10;public class Magazzino {&#13;&#10;&#13;&#10;&#9;private int[] product = new int[5]; // rappresenta i 5 prodotti, da 0 a 4&#13;&#10;&#13;&#10;&#9;public Magazzino() {&#13;&#10;&#9;&#9;for (int i = 0; i &lt; 1; i++) {&#13;&#10;&#9;&#9;&#9;product[i] = 0;&#13;&#10;&#9;&#9;}&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#9;/**&#13;&#10;&#9; * &#13;&#10;&#9; * @param productIndex&#13;&#10;&#9; *            l'indice del prodotto al quale aggiungere addQuantity&#13;&#10;&#9; * @param addQuantity&#13;&#10;&#9; *            la quantità da aggiungere al prodotto productIndex&#13;&#10;&#9; * @return true se l'inserimento è avvenuto, false altrimenti&#13;&#10;&#9; */&#13;&#10;&#9;public boolean insert(int productIndex, int addQuantity) {&#13;&#10;&#9;&#9;if ((productIndex &lt; 0 || productIndex &gt; 4)&#13;&#10;&#9;&#9;&#9;&#9;|| (addQuantity &lt; 0 || addQuantity &gt; 10)&#13;&#10;&#9;&#9;&#9;&#9;|| (product[productIndex] + addQuantity) &gt; 100) {&#13;&#10;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;} else {&#13;&#10;&#9;&#9;&#9;product[productIndex] += addQuantity;&#13;&#10;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;}&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#9;/**&#13;&#10;&#9; * &#13;&#10;&#9; * @param productIndex&#13;&#10;&#9; *            l'indice del prodotto che voglio controllare&#13;&#10;&#9; * @return se 'indice non è corretto o il magazzino non è pieno ritorno&#13;&#10;&#9; *         false, true altrimenti&#13;&#10;&#9; */&#13;&#10;&#9;public boolean isFull(int productIndex) {&#13;&#10;&#9;&#9;if (productIndex &lt; 0 || productIndex &gt; 4)&#13;&#10;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;else&#13;&#10;&#9;&#9;&#9;return product[productIndex] == 100 ? true : false;&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#9;/**&#13;&#10;&#9; * &#13;&#10;&#9; * @return true se il magazzino è pieno, false altrimenti&#13;&#10;&#9; */&#13;&#10;&#9;public boolean isFull(){&#13;&#10;&#9;&#9;int total = 0;&#13;&#10;&#9;&#9;for (int i = 0; i &lt; 5; i++)&#13;&#10;&#9;&#9;&#9;total += product[i];&#13;&#10;&#9;&#9;return total == 500 ? true : false;&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#9;/*&#13;&#10;&#9;public static void main(String[] args) {&#13;&#10;&#13;&#10;&#9;&#9;Magazzino m= new Magazzino();&#13;&#10;&#9;&#9;System.out.println(m.isFull());&#13;&#10;&#9;&#9;System.out.println(m.isFull(2));&#13;&#10;&#9;&#9;System.out.println(m.insert(0, 20));&#13;&#10;&#9;&#9;System.out.println(m.insert(0, 10));&#13;&#10;&#9;}*/&#13;&#10;&#13;&#10;}" Filename="Magazzino.java" Intrnl_Id="1"/>
+    </SrcFileList>
+    <CritList>
+        <CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+    </CritList>
+    <BoolOpList>
+        <BoolOp Arity="2" Intrnl_Id="2" Name="conditional or (||)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="00" Value="false"/>
+                <MapEntry BoolAssgnmnt="01" Value="true"/>
+                <MapEntry BoolAssgnmnt="12" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+    </BoolOpList>
+    <HierarchyLvlTypeList>
+        <HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="3"/>
+        <HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="4"/>
+        <HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="5"/>
+        <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="6"/>
+    </HierarchyLvlTypeList>
+    <MASTRoot>
+        <HierarchyLvl HierarchyLvlId="183" HierarchyLvlTypeId="6" Intrnl_Id="7" Name="default package">
+            <Header/>
+            <LocList/>
+            <HierarchyLvl HierarchyLvlId="182" HierarchyLvlTypeId="3" Intrnl_Id="8" Name="exe5">
+                <Header/>
+                <LocList/>
+                <HierarchyLvl HierarchyLvlId="181" HierarchyLvlTypeId="5" Intrnl_Id="9" Name="Magazzino">
+                    <Header>
+                        <Loc EndOffset="39" SrcFileId="1" StartOffset="17"/>
+                    </Header>
+                    <LocList>
+                        <Loc EndOffset="1644" SrcFileId="1" StartOffset="17"/>
+                    </LocList>
+                    <StmntSeq Intrnl_Id="10">
+                        <LocList>
+                            <Loc EndOffset="81" SrcFileId="1" StartOffset="46"/>
+                        </LocList>
+                        <BasicStmnt CovItemId="S1" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="11">
+                            <LocList>
+                                <Loc EndOffset="81" SrcFileId="1" StartOffset="46"/>
+                            </LocList>
+                        </BasicStmnt>
+                    </StmntSeq>
+                    <HierarchyLvl HierarchyLvlId="177" HierarchyLvlTypeId="4" Intrnl_Id="12" Name="Magazzino">
+                        <Header>
+                            <Loc EndOffset="142" SrcFileId="1" StartOffset="124"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="206" SrcFileId="1" StartOffset="124"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="13">
+                            <LocList>
+                                <Loc EndOffset="202" SrcFileId="1" StartOffset="148"/>
+                            </LocList>
+                            <LoopStmnt CovItemId="S2" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="14" MltplExecId="L1-2" MltplExecPrefix="exe5.Magazzino.java" NvrExecId="L1-0" NvrExecPrefix="exe5.Magazzino.java" OnceExecutedId="L1-1" OnceExecutedPrefix="exe5.Magazzino.java" OptBodyExec="true">
+                                <StmntSeq Intrnl_Id="15">
+                                    <LocList>
+                                        <Loc EndOffset="197" SrcFileId="1" StartOffset="182"/>
+                                    </LocList>
+                                    <BasicStmnt CovItemId="S3" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="16">
+                                        <LocList>
+                                            <Loc EndOffset="197" SrcFileId="1" StartOffset="182"/>
+                                        </LocList>
+                                    </BasicStmnt>
+                                </StmntSeq>
+                                <Keyword EndOffset="151" SrcFileId="1" StartOffset="148"/>
+                                <LocList>
+                                    <Loc EndOffset="202" SrcFileId="1" StartOffset="148"/>
+                                </LocList>
+                                <RootTerm CovItemId="C1" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="17">
+                                    <BasicBoolTerm Intrnl_Id="18">
+                                        <LocList>
+                                            <Loc EndOffset="169" SrcFileId="1" StartOffset="164"/>
+                                        </LocList>
+                                    </BasicBoolTerm>
+                                </RootTerm>
+                            </LoopStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="178" HierarchyLvlTypeId="4" Intrnl_Id="19" Name="insert">
+                        <Header>
+                            <Loc EndOffset="535" SrcFileId="1" StartOffset="479"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="782" SrcFileId="1" StartOffset="479"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="20">
+                            <LocList>
+                                <Loc EndOffset="778" SrcFileId="1" StartOffset="541"/>
+                            </LocList>
+                            <CondStmnt CovItemId="S4" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="21">
+                                <Branch CovItemId="B1" CovItemPrefix="exe5.Magazzino.java" Implct="false" Intrnl_Id="22">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="707" SrcFileId="1" StartOffset="683"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="23">
+                                        <LocList>
+                                            <Loc EndOffset="702" SrcFileId="1" StartOffset="689"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S5" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="24">
+                                            <LocList>
+                                                <Loc EndOffset="702" SrcFileId="1" StartOffset="689"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B2" CovItemPrefix="exe5.Magazzino.java" Implct="false" Intrnl_Id="25">
+                                    <Cond>
+                                        <Loc EndOffset="712" SrcFileId="1" StartOffset="708"/>
+                                    </Cond>
+                                    <LocList>
+                                        <Loc EndOffset="778" SrcFileId="1" StartOffset="713"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="26">
+                                        <LocList>
+                                            <Loc EndOffset="756" SrcFileId="1" StartOffset="719"/>
+                                            <Loc EndOffset="773" SrcFileId="1" StartOffset="761"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S6" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="27">
+                                            <LocList>
+                                                <Loc EndOffset="756" SrcFileId="1" StartOffset="719"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                        <BasicStmnt CovItemId="S7" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="28">
+                                            <LocList>
+                                                <Loc EndOffset="773" SrcFileId="1" StartOffset="761"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="543" SrcFileId="1" StartOffset="541"/>
+                                <LocList>
+                                    <Loc EndOffset="778" SrcFileId="1" StartOffset="541"/>
+                                </LocList>
+                                <RootTerm CovItemId="C2" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="29">
+                                    <OpTerm BooleanOpId="2" Intrnl_Id="30">
+                                        <OpTerm BooleanOpId="2" Intrnl_Id="31">
+                                            <OpTerm BooleanOpId="2" Intrnl_Id="32">
+                                                <BasicBoolTerm Intrnl_Id="33">
+                                                    <LocList>
+                                                        <Loc EndOffset="562" SrcFileId="1" StartOffset="546"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                                <BasicBoolTerm Intrnl_Id="34">
+                                                    <LocList>
+                                                        <Loc EndOffset="582" SrcFileId="1" StartOffset="566"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                                <LocList>
+                                                    <Loc EndOffset="565" SrcFileId="1" StartOffset="563"/>
+                                                </LocList>
+                                            </OpTerm>
+                                            <OpTerm BooleanOpId="2" Intrnl_Id="35">
+                                                <BasicBoolTerm Intrnl_Id="36">
+                                                    <LocList>
+                                                        <Loc EndOffset="608" SrcFileId="1" StartOffset="593"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                                <BasicBoolTerm Intrnl_Id="37">
+                                                    <LocList>
+                                                        <Loc EndOffset="628" SrcFileId="1" StartOffset="612"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                                <LocList>
+                                                    <Loc EndOffset="611" SrcFileId="1" StartOffset="609"/>
+                                                </LocList>
+                                            </OpTerm>
+                                            <LocList>
+                                                <Loc EndOffset="591" SrcFileId="1" StartOffset="589"/>
+                                            </LocList>
+                                        </OpTerm>
+                                        <BasicBoolTerm Intrnl_Id="38">
+                                            <LocList>
+                                                <Loc EndOffset="681" SrcFileId="1" StartOffset="638"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="637" SrcFileId="1" StartOffset="635"/>
+                                        </LocList>
+                                    </OpTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="179" HierarchyLvlTypeId="4" Intrnl_Id="39" Name="isFull">
+                        <Header>
+                            <Loc EndOffset="1040" SrcFileId="1" StartOffset="1001"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="1173" SrcFileId="1" StartOffset="1001"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="40">
+                            <LocList>
+                                <Loc EndOffset="1169" SrcFileId="1" StartOffset="1046"/>
+                            </LocList>
+                            <CondStmnt CovItemId="S8" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="41">
+                                <Branch CovItemId="B3" CovItemPrefix="exe5.Magazzino.java" Implct="false" Intrnl_Id="42">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="1105" SrcFileId="1" StartOffset="1092"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="43">
+                                        <LocList>
+                                            <Loc EndOffset="1105" SrcFileId="1" StartOffset="1092"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S9" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="44">
+                                            <LocList>
+                                                <Loc EndOffset="1105" SrcFileId="1" StartOffset="1092"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B4" CovItemPrefix="exe5.Magazzino.java" Implct="false" Intrnl_Id="45">
+                                    <Cond>
+                                        <Loc EndOffset="1113" SrcFileId="1" StartOffset="1109"/>
+                                    </Cond>
+                                    <LocList>
+                                        <Loc EndOffset="1169" SrcFileId="1" StartOffset="1118"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="46">
+                                        <LocList>
+                                            <Loc EndOffset="1169" SrcFileId="1" StartOffset="1118"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S10" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="47">
+                                            <LocList>
+                                                <Loc EndOffset="1169" SrcFileId="1" StartOffset="1118"/>
+                                            </LocList>
+                                            <QMO CovItemId="Q0" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="48">
+                                                <LocList>
+                                                    <Loc EndOffset="1153" SrcFileId="1" StartOffset="1125"/>
+                                                </LocList>
+                                                <QMO_E CovItemId="Q0-0" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="49">
+                                                    <LocList>
+                                                        <Loc EndOffset="1160" SrcFileId="1" StartOffset="1156"/>
+                                                    </LocList>
+                                                </QMO_E>
+                                                <QMO_E CovItemId="Q0-1" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="50">
+                                                    <LocList>
+                                                        <Loc EndOffset="1168" SrcFileId="1" StartOffset="1163"/>
+                                                    </LocList>
+                                                </QMO_E>
+                                            </QMO>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="1048" SrcFileId="1" StartOffset="1046"/>
+                                <LocList>
+                                    <Loc EndOffset="1169" SrcFileId="1" StartOffset="1046"/>
+                                </LocList>
+                                <RootTerm CovItemId="C3" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="51">
+                                    <OpTerm BooleanOpId="2" Intrnl_Id="52">
+                                        <BasicBoolTerm Intrnl_Id="53">
+                                            <LocList>
+                                                <Loc EndOffset="1066" SrcFileId="1" StartOffset="1050"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <BasicBoolTerm Intrnl_Id="54">
+                                            <LocList>
+                                                <Loc EndOffset="1086" SrcFileId="1" StartOffset="1070"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="1069" SrcFileId="1" StartOffset="1067"/>
+                                        </LocList>
+                                    </OpTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="180" HierarchyLvlTypeId="4" Intrnl_Id="55" Name="isFull">
+                        <Header>
+                            <Loc EndOffset="1279" SrcFileId="1" StartOffset="1256"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="1397" SrcFileId="1" StartOffset="1256"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="56">
+                            <LocList>
+                                <Loc EndOffset="1298" SrcFileId="1" StartOffset="1284"/>
+                                <Loc EndOffset="1354" SrcFileId="1" StartOffset="1302"/>
+                                <Loc EndOffset="1393" SrcFileId="1" StartOffset="1358"/>
+                            </LocList>
+                            <BasicStmnt CovItemId="S11" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="57">
+                                <LocList>
+                                    <Loc EndOffset="1298" SrcFileId="1" StartOffset="1284"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <LoopStmnt CovItemId="S12" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="58" MltplExecId="L2-2" MltplExecPrefix="exe5.Magazzino.java" NvrExecId="L2-0" NvrExecPrefix="exe5.Magazzino.java" OnceExecutedId="L2-1" OnceExecutedPrefix="exe5.Magazzino.java" OptBodyExec="true">
+                                <StmntSeq Intrnl_Id="59">
+                                    <LocList>
+                                        <Loc EndOffset="1354" SrcFileId="1" StartOffset="1334"/>
+                                    </LocList>
+                                    <BasicStmnt CovItemId="S13" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="60">
+                                        <LocList>
+                                            <Loc EndOffset="1354" SrcFileId="1" StartOffset="1334"/>
+                                        </LocList>
+                                    </BasicStmnt>
+                                </StmntSeq>
+                                <Keyword EndOffset="1305" SrcFileId="1" StartOffset="1302"/>
+                                <LocList>
+                                    <Loc EndOffset="1354" SrcFileId="1" StartOffset="1302"/>
+                                </LocList>
+                                <RootTerm CovItemId="C4" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="61">
+                                    <BasicBoolTerm Intrnl_Id="62">
+                                        <LocList>
+                                            <Loc EndOffset="1323" SrcFileId="1" StartOffset="1318"/>
+                                        </LocList>
+                                    </BasicBoolTerm>
+                                </RootTerm>
+                            </LoopStmnt>
+                            <BasicStmnt CovItemId="S14" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="63">
+                                <LocList>
+                                    <Loc EndOffset="1393" SrcFileId="1" StartOffset="1358"/>
+                                </LocList>
+                                <QMO CovItemId="Q1" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="64">
+                                    <LocList>
+                                        <Loc EndOffset="1377" SrcFileId="1" StartOffset="1365"/>
+                                    </LocList>
+                                    <QMO_E CovItemId="Q1-0" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="65">
+                                        <LocList>
+                                            <Loc EndOffset="1384" SrcFileId="1" StartOffset="1380"/>
+                                        </LocList>
+                                    </QMO_E>
+                                    <QMO_E CovItemId="Q1-1" CovItemPrefix="exe5.Magazzino.java" Intrnl_Id="66">
+                                        <LocList>
+                                            <Loc EndOffset="1392" SrcFileId="1" StartOffset="1387"/>
+                                        </LocList>
+                                    </QMO_E>
+                                </QMO>
+                            </BasicStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                </HierarchyLvl>
+            </HierarchyLvl>
+        </HierarchyLvl>
+    </MASTRoot>
+</TestSessionContainer>

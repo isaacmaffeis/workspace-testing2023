@@ -13,7 +13,7 @@ public class Balance {
 		
 		if((p<4 && w<=400) || (p==0 && w<=1000))
 			return true;
-		else
+	 	else
 		{
 			return false;
 		} 

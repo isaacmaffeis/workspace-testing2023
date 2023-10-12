@@ -14,7 +14,7 @@ public class ComputerTestBranchCoverage {
 		boolean y=true;
 		boolean z=false;
 		Computer c1= new Computer();
-		c1.Compute(x, y, z, tempTest, threshTest);	
+		assertTrue(c1.Compute(x, y, z, tempTest, threshTest));	
 	}
 	
 	@Test
@@ -25,9 +25,10 @@ public class ComputerTestBranchCoverage {
 		boolean y=false;
 		boolean z=true;
 		Computer c1= new Computer();
-		c1.Compute(x, y, z, tempTest, threshTest);
+		assertFalse(c1.Compute(x, y, z, tempTest, threshTest));
 	}
 	
-
+	// Ho coperto tutti i rami (branch) e quindi le decisioni e le istruzioni, 
+	// ma non ho la copertura delle condizioni
 
 }

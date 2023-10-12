@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1693382459321" TestSessionContainerId="7f777cc6-e1b9-4b6b-87de-bcc3c7be966c" version="1.0">
+    <SrcFileList>
+        <SrcFile Content="package esercizio2;&#13;&#10;&#13;&#10;public class Light {&#13;&#10;&#13;&#10;&#9;boolean lightOn = false;&#13;&#10;&#9;boolean bottomIn = false;&#13;&#10;&#9;boolean bottomOut = false;&#13;&#10;&#13;&#10;&#9;Light() {&#13;&#10;&#9;}&#13;&#10;&#13;&#10;&#9;public boolean onOff(boolean light, boolean in, boolean out) {&#13;&#10;&#13;&#10;&#9;&#9;this.bottomIn = in;&#13;&#10;&#9;&#9;this.bottomOut = out;&#13;&#10;&#13;&#10;&#9;&#9;if ((bottomIn || bottomOut) &amp;&amp; !light) {&#13;&#10;&#9;&#9;&#9;lightOn = true;&#13;&#10;&#9;&#9;&#9;return true; // luce accesa&#13;&#10;&#9;&#9;} else {&#13;&#10;&#9;&#9;&#9;lightOn = false;&#13;&#10;&#9;&#9;&#9;return false; // luce spenta&#13;&#10;&#9;&#9;}&#13;&#10;&#9;}&#13;&#10;}" Filename="Light.java" Intrnl_Id="1"/>
+    </SrcFileList>
+    <CritList>
+        <CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+    </CritList>
+    <BoolOpList>
+        <BoolOp Arity="2" Intrnl_Id="2" Name="conditional and (&amp;&amp;)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="02" Value="false"/>
+                <MapEntry BoolAssgnmnt="10" Value="false"/>
+                <MapEntry BoolAssgnmnt="11" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+        <BoolOp Arity="2" Intrnl_Id="3" Name="conditional or (||)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="00" Value="false"/>
+                <MapEntry BoolAssgnmnt="01" Value="true"/>
+                <MapEntry BoolAssgnmnt="12" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+        <BoolOp Arity="1" Intrnl_Id="4" Name="not (!)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="1" Value="false"/>
+                <MapEntry BoolAssgnmnt="0" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+    </BoolOpList>
+    <HierarchyLvlTypeList>
+        <HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="5"/>
+        <HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="6"/>
+        <HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="7"/>
+        <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="8"/>
+    </HierarchyLvlTypeList>
+    <MASTRoot>
+        <HierarchyLvl HierarchyLvlId="73" HierarchyLvlTypeId="8" Intrnl_Id="9" Name="default package">
+            <Header/>
+            <LocList/>
+            <HierarchyLvl HierarchyLvlId="72" HierarchyLvlTypeId="5" Intrnl_Id="10" Name="esercizio2">
+                <Header/>
+                <LocList/>
+                <HierarchyLvl HierarchyLvlId="71" HierarchyLvlTypeId="7" Intrnl_Id="11" Name="Light">
+                    <Header>
+                        <Loc EndOffset="41" SrcFileId="1" StartOffset="23"/>
+                    </Header>
+                    <LocList>
+                        <Loc EndOffset="440" SrcFileId="1" StartOffset="23"/>
+                    </LocList>
+                    <StmntSeq Intrnl_Id="12">
+                        <LocList>
+                            <Loc EndOffset="72" SrcFileId="1" StartOffset="48"/>
+                            <Loc EndOffset="100" SrcFileId="1" StartOffset="75"/>
+                            <Loc EndOffset="129" SrcFileId="1" StartOffset="103"/>
+                        </LocList>
+                        <BasicStmnt CovItemId="S1" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="13">
+                            <LocList>
+                                <Loc EndOffset="72" SrcFileId="1" StartOffset="48"/>
+                            </LocList>
+                        </BasicStmnt>
+                        <BasicStmnt CovItemId="S2" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="14">
+                            <LocList>
+                                <Loc EndOffset="100" SrcFileId="1" StartOffset="75"/>
+                            </LocList>
+                        </BasicStmnt>
+                        <BasicStmnt CovItemId="S3" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="15">
+                            <LocList>
+                                <Loc EndOffset="129" SrcFileId="1" StartOffset="103"/>
+                            </LocList>
+                        </BasicStmnt>
+                    </StmntSeq>
+                    <HierarchyLvl HierarchyLvlId="69" HierarchyLvlTypeId="6" Intrnl_Id="16" Name="Light">
+                        <Header>
+                            <Loc EndOffset="141" SrcFileId="1" StartOffset="134"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="147" SrcFileId="1" StartOffset="134"/>
+                        </LocList>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="70" HierarchyLvlTypeId="6" Intrnl_Id="17" Name="onOff">
+                        <Header>
+                            <Loc EndOffset="212" SrcFileId="1" StartOffset="152"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="437" SrcFileId="1" StartOffset="152"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="18">
+                            <LocList>
+                                <Loc EndOffset="239" SrcFileId="1" StartOffset="220"/>
+                                <Loc EndOffset="264" SrcFileId="1" StartOffset="243"/>
+                                <Loc EndOffset="433" SrcFileId="1" StartOffset="270"/>
+                            </LocList>
+                            <BasicStmnt CovItemId="S4" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="19">
+                                <LocList>
+                                    <Loc EndOffset="239" SrcFileId="1" StartOffset="220"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <BasicStmnt CovItemId="S5" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="20">
+                                <LocList>
+                                    <Loc EndOffset="264" SrcFileId="1" StartOffset="243"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <CondStmnt CovItemId="S6" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="21">
+                                <Branch CovItemId="B1" CovItemPrefix="esercizio2.Light.java" Implct="false" Intrnl_Id="22">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="367" SrcFileId="1" StartOffset="309"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="23">
+                                        <LocList>
+                                            <Loc EndOffset="330" SrcFileId="1" StartOffset="315"/>
+                                            <Loc EndOffset="347" SrcFileId="1" StartOffset="335"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S7" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="24">
+                                            <LocList>
+                                                <Loc EndOffset="330" SrcFileId="1" StartOffset="315"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                        <BasicStmnt CovItemId="S8" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="25">
+                                            <LocList>
+                                                <Loc EndOffset="347" SrcFileId="1" StartOffset="335"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B2" CovItemPrefix="esercizio2.Light.java" Implct="false" Intrnl_Id="26">
+                                    <Cond>
+                                        <Loc EndOffset="372" SrcFileId="1" StartOffset="368"/>
+                                    </Cond>
+                                    <LocList>
+                                        <Loc EndOffset="433" SrcFileId="1" StartOffset="373"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="27">
+                                        <LocList>
+                                            <Loc EndOffset="395" SrcFileId="1" StartOffset="379"/>
+                                            <Loc EndOffset="413" SrcFileId="1" StartOffset="400"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S9" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="28">
+                                            <LocList>
+                                                <Loc EndOffset="395" SrcFileId="1" StartOffset="379"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                        <BasicStmnt CovItemId="S10" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="29">
+                                            <LocList>
+                                                <Loc EndOffset="413" SrcFileId="1" StartOffset="400"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="272" SrcFileId="1" StartOffset="270"/>
+                                <LocList>
+                                    <Loc EndOffset="433" SrcFileId="1" StartOffset="270"/>
+                                </LocList>
+                                <RootTerm CovItemId="C1" CovItemPrefix="esercizio2.Light.java" Intrnl_Id="30">
+                                    <OpTerm BooleanOpId="2" Intrnl_Id="31">
+                                        <OpTerm BooleanOpId="3" Intrnl_Id="32">
+                                            <BasicBoolTerm Intrnl_Id="33">
+                                                <LocList>
+                                                    <Loc EndOffset="283" SrcFileId="1" StartOffset="275"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <BasicBoolTerm Intrnl_Id="34">
+                                                <LocList>
+                                                    <Loc EndOffset="296" SrcFileId="1" StartOffset="287"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <LocList>
+                                                <Loc EndOffset="286" SrcFileId="1" StartOffset="284"/>
+                                            </LocList>
+                                        </OpTerm>
+                                        <OpTerm BooleanOpId="4" Intrnl_Id="35">
+                                            <BasicBoolTerm Intrnl_Id="36">
+                                                <LocList>
+                                                    <Loc EndOffset="307" SrcFileId="1" StartOffset="302"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <LocList>
+                                                <Loc EndOffset="302" SrcFileId="1" StartOffset="301"/>
+                                            </LocList>
+                                        </OpTerm>
+                                        <LocList>
+                                            <Loc EndOffset="300" SrcFileId="1" StartOffset="298"/>
+                                        </LocList>
+                                    </OpTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                </HierarchyLvl>
+            </HierarchyLvl>
+        </HierarchyLvl>
+    </MASTRoot>
+</TestSessionContainer>

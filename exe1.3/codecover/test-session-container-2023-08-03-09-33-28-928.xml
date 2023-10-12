@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1691048008919" TestSessionContainerId="6c28f86f-dfa0-47e4-8db6-2d685fa8bf0f" version="1.0">
+    <SrcFileList>
+        <SrcFile Content="package exe3;&#13;&#10;&#13;&#10;public class Computer {&#13;&#10;&#13;&#10;&#9;boolean Compute(boolean x, boolean y, boolean z, int temp, int thresh) {&#13;&#10;&#9;&#9;boolean no_alarm;&#13;&#10;&#9;&#9;if (temp &lt;= thresh) {&#13;&#10;&#9;&#9;&#9;no_alarm = true;&#13;&#10;&#9;&#9;} else {&#13;&#10;&#9;&#9;&#9;no_alarm = false;&#13;&#10;&#9;&#9;}&#13;&#10;&#9;&#9;if ((x &amp;&amp; (y || z)) &amp;&amp; no_alarm)&#13;&#10;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;else&#13;&#10;&#9;&#9;&#9;return false;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;}" Filename="Computer.java" Intrnl_Id="1"/>
+    </SrcFileList>
+    <CritList>
+        <CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+    </CritList>
+    <BoolOpList>
+        <BoolOp Arity="2" Intrnl_Id="2" Name="conditional and (&amp;&amp;)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="02" Value="false"/>
+                <MapEntry BoolAssgnmnt="10" Value="false"/>
+                <MapEntry BoolAssgnmnt="11" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+        <BoolOp Arity="2" Intrnl_Id="3" Name="conditional or (||)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="00" Value="false"/>
+                <MapEntry BoolAssgnmnt="01" Value="true"/>
+                <MapEntry BoolAssgnmnt="12" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+    </BoolOpList>
+    <HierarchyLvlTypeList>
+        <HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="4"/>
+        <HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="5"/>
+        <HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="6"/>
+        <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="7"/>
+    </HierarchyLvlTypeList>
+    <MASTRoot>
+        <HierarchyLvl HierarchyLvlId="27" HierarchyLvlTypeId="7" Intrnl_Id="8" Name="default package">
+            <Header/>
+            <LocList/>
+            <HierarchyLvl HierarchyLvlId="26" HierarchyLvlTypeId="4" Intrnl_Id="9" Name="exe3">
+                <Header/>
+                <LocList/>
+                <HierarchyLvl HierarchyLvlId="25" HierarchyLvlTypeId="6" Intrnl_Id="10" Name="Computer">
+                    <Header>
+                        <Loc EndOffset="38" SrcFileId="1" StartOffset="17"/>
+                    </Header>
+                    <LocList>
+                        <Loc EndOffset="312" SrcFileId="1" StartOffset="17"/>
+                    </LocList>
+                    <HierarchyLvl HierarchyLvlId="24" HierarchyLvlTypeId="5" Intrnl_Id="11" Name="Compute">
+                        <Header>
+                            <Loc EndOffset="115" SrcFileId="1" StartOffset="45"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="306" SrcFileId="1" StartOffset="45"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="12">
+                            <LocList>
+                                <Loc EndOffset="223" SrcFileId="1" StartOffset="142"/>
+                                <Loc EndOffset="302" SrcFileId="1" StartOffset="227"/>
+                            </LocList>
+                            <CondStmnt CovItemId="S1" CovItemPrefix="exe3.Computer.java" Intrnl_Id="13">
+                                <Branch CovItemId="B1" CovItemPrefix="exe3.Computer.java" Implct="false" Intrnl_Id="14">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="189" SrcFileId="1" StartOffset="162"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="15">
+                                        <LocList>
+                                            <Loc EndOffset="184" SrcFileId="1" StartOffset="168"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S2" CovItemPrefix="exe3.Computer.java" Intrnl_Id="16">
+                                            <LocList>
+                                                <Loc EndOffset="184" SrcFileId="1" StartOffset="168"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B2" CovItemPrefix="exe3.Computer.java" Implct="false" Intrnl_Id="17">
+                                    <Cond>
+                                        <Loc EndOffset="194" SrcFileId="1" StartOffset="190"/>
+                                    </Cond>
+                                    <LocList>
+                                        <Loc EndOffset="223" SrcFileId="1" StartOffset="195"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="18">
+                                        <LocList>
+                                            <Loc EndOffset="218" SrcFileId="1" StartOffset="201"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S3" CovItemPrefix="exe3.Computer.java" Intrnl_Id="19">
+                                            <LocList>
+                                                <Loc EndOffset="218" SrcFileId="1" StartOffset="201"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="144" SrcFileId="1" StartOffset="142"/>
+                                <LocList>
+                                    <Loc EndOffset="223" SrcFileId="1" StartOffset="142"/>
+                                </LocList>
+                                <RootTerm CovItemId="C1" CovItemPrefix="exe3.Computer.java" Intrnl_Id="20">
+                                    <BasicBoolTerm Intrnl_Id="21">
+                                        <LocList>
+                                            <Loc EndOffset="160" SrcFileId="1" StartOffset="146"/>
+                                        </LocList>
+                                    </BasicBoolTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                            <CondStmnt CovItemId="S4" CovItemPrefix="exe3.Computer.java" Intrnl_Id="22">
+                                <Branch CovItemId="B3" CovItemPrefix="exe3.Computer.java" Implct="false" Intrnl_Id="23">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="276" SrcFileId="1" StartOffset="264"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="24">
+                                        <LocList>
+                                            <Loc EndOffset="276" SrcFileId="1" StartOffset="264"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S5" CovItemPrefix="exe3.Computer.java" Intrnl_Id="25">
+                                            <LocList>
+                                                <Loc EndOffset="276" SrcFileId="1" StartOffset="264"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B4" CovItemPrefix="exe3.Computer.java" Implct="false" Intrnl_Id="26">
+                                    <Cond>
+                                        <Loc EndOffset="284" SrcFileId="1" StartOffset="280"/>
+                                    </Cond>
+                                    <LocList>
+                                        <Loc EndOffset="302" SrcFileId="1" StartOffset="289"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="27">
+                                        <LocList>
+                                            <Loc EndOffset="302" SrcFileId="1" StartOffset="289"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S6" CovItemPrefix="exe3.Computer.java" Intrnl_Id="28">
+                                            <LocList>
+                                                <Loc EndOffset="302" SrcFileId="1" StartOffset="289"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="229" SrcFileId="1" StartOffset="227"/>
+                                <LocList>
+                                    <Loc EndOffset="302" SrcFileId="1" StartOffset="227"/>
+                                </LocList>
+                                <RootTerm CovItemId="C2" CovItemPrefix="exe3.Computer.java" Intrnl_Id="29">
+                                    <OpTerm BooleanOpId="2" Intrnl_Id="30">
+                                        <OpTerm BooleanOpId="2" Intrnl_Id="31">
+                                            <BasicBoolTerm Intrnl_Id="32">
+                                                <LocList>
+                                                    <Loc EndOffset="233" SrcFileId="1" StartOffset="232"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <OpTerm BooleanOpId="3" Intrnl_Id="33">
+                                                <BasicBoolTerm Intrnl_Id="34">
+                                                    <LocList>
+                                                        <Loc EndOffset="239" SrcFileId="1" StartOffset="238"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                                <BasicBoolTerm Intrnl_Id="35">
+                                                    <LocList>
+                                                        <Loc EndOffset="244" SrcFileId="1" StartOffset="243"/>
+                                                    </LocList>
+                                                </BasicBoolTerm>
+                                                <LocList>
+                                                    <Loc EndOffset="242" SrcFileId="1" StartOffset="240"/>
+                                                </LocList>
+                                            </OpTerm>
+                                            <LocList>
+                                                <Loc EndOffset="236" SrcFileId="1" StartOffset="234"/>
+                                            </LocList>
+                                        </OpTerm>
+                                        <BasicBoolTerm Intrnl_Id="36">
+                                            <LocList>
+                                                <Loc EndOffset="258" SrcFileId="1" StartOffset="250"/>
+                                            </LocList>
+                                        </BasicBoolTerm>
+                                        <LocList>
+                                            <Loc EndOffset="249" SrcFileId="1" StartOffset="247"/>
+                                        </LocList>
+                                    </OpTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                </HierarchyLvl>
+            </HierarchyLvl>
+        </HierarchyLvl>
+    </MASTRoot>
+</TestSessionContainer>

@@ -19,6 +19,16 @@ public class testLight {
 		assertTrue(l1.onOff(false, false, true));
 		Light l2 = new Light();
 		assertFalse(l2.onOff(false, false, false));
+		// coperto la decisione if sia vera che falsa
+	}
+	
+	@Test
+	public void testConditionCoverageLight() {
+		// coprire le condizioni
+		Light l3 = new Light();
+		assertFalse(l3.onOff(true, true, true));
+		Light l4 = new Light();
+		assertTrue(l4.onOff(false, true, true));
 	}
 	
 }

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?><TestSessionContainer xmlns="http://www.codecover.org/xml/testsession-container" Date="1681341951123" TestSessionContainerId="adeee7d3-ff6d-4485-8555-182fd241c59a" version="1.0">
+    <SrcFileList>
+        <SrcFile Content="package exe4;&#13;&#10;&#13;&#10;public class Balance {&#13;&#10;&#9;&#13;&#10;&#9;private int p;&#13;&#10;&#9;private int w;&#13;&#10;&#9;&#13;&#10;&#9;Balance(){}&#13;&#10;&#9;&#13;&#10;&#9;public boolean setBalanceValue(int x, int y){&#13;&#10;&#9;&#9;this.p=x;&#13;&#10;&#9;&#9;this.w=y;&#13;&#10;&#9;&#9;&#13;&#10;&#9;&#9;if((p&lt;4 &amp;&amp; w&lt;=400) || (p==0 &amp;&amp; w&lt;=1000))&#13;&#10;&#9;&#9;&#9;return true;&#13;&#10;&#9;&#9;else&#13;&#10;&#9;&#9;{&#13;&#10;&#9;&#9;&#9;return false;&#13;&#10;&#9;&#9;} &#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;public int getP(){&#13;&#10;&#9;&#9;return p;&#13;&#10;&#9;}&#13;&#10;&#9;&#13;&#10;&#9;public int getW(){&#13;&#10;&#9;&#9;return w;&#13;&#10;&#9;}&#13;&#10;}" Filename="Balance.java" Intrnl_Id="1"/>
+    </SrcFileList>
+    <CritList>
+        <CritListEntry Name="org.codecover.model.utils.criteria.LoopCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.QMOCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.ConditionCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.BranchCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.SynchronizedStatementCoverage" PluginName="org.codecover"/>
+        <CritListEntry Name="org.codecover.model.utils.criteria.StatementCoverage" PluginName="org.codecover"/>
+    </CritList>
+    <BoolOpList>
+        <BoolOp Arity="2" Intrnl_Id="2" Name="conditional and (&amp;&amp;)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="02" Value="false"/>
+                <MapEntry BoolAssgnmnt="10" Value="false"/>
+                <MapEntry BoolAssgnmnt="11" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+        <BoolOp Arity="2" Intrnl_Id="3" Name="conditional or (||)">
+            <BoolAssgnmntBoolMapList>
+                <MapEntry BoolAssgnmnt="00" Value="false"/>
+                <MapEntry BoolAssgnmnt="01" Value="true"/>
+                <MapEntry BoolAssgnmnt="12" Value="true"/>
+            </BoolAssgnmntBoolMapList>
+        </BoolOp>
+    </BoolOpList>
+    <HierarchyLvlTypeList>
+        <HierarchyLvlType EnglishName="package" IntrnlName="package" Intrnl_Id="4"/>
+        <HierarchyLvlType EnglishName="method" IntrnlName="method" Intrnl_Id="5"/>
+        <HierarchyLvlType EnglishName="class" IntrnlName="class" Intrnl_Id="6"/>
+        <HierarchyLvlType EnglishName="default package" IntrnlName="default package" Intrnl_Id="7"/>
+    </HierarchyLvlTypeList>
+    <MASTRoot>
+        <HierarchyLvl HierarchyLvlId="29" HierarchyLvlTypeId="7" Intrnl_Id="8" Name="default package">
+            <Header/>
+            <LocList/>
+            <HierarchyLvl HierarchyLvlId="28" HierarchyLvlTypeId="4" Intrnl_Id="9" Name="exe4">
+                <Header/>
+                <LocList/>
+                <HierarchyLvl HierarchyLvlId="27" HierarchyLvlTypeId="6" Intrnl_Id="10" Name="Balance">
+                    <Header>
+                        <Loc EndOffset="37" SrcFileId="1" StartOffset="17"/>
+                    </Header>
+                    <LocList>
+                        <Loc EndOffset="361" SrcFileId="1" StartOffset="17"/>
+                    </LocList>
+                    <HierarchyLvl HierarchyLvlId="23" HierarchyLvlTypeId="5" Intrnl_Id="11" Name="Balance">
+                        <Header>
+                            <Loc EndOffset="91" SrcFileId="1" StartOffset="82"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="93" SrcFileId="1" StartOffset="82"/>
+                        </LocList>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="24" HierarchyLvlTypeId="5" Intrnl_Id="12" Name="setBalanceValue">
+                        <Header>
+                            <Loc EndOffset="143" SrcFileId="1" StartOffset="99"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="276" SrcFileId="1" StartOffset="99"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="13">
+                            <LocList>
+                                <Loc EndOffset="157" SrcFileId="1" StartOffset="148"/>
+                                <Loc EndOffset="170" SrcFileId="1" StartOffset="161"/>
+                                <Loc EndOffset="271" SrcFileId="1" StartOffset="178"/>
+                            </LocList>
+                            <BasicStmnt CovItemId="S1" CovItemPrefix="exe4.Balance.java" Intrnl_Id="14">
+                                <LocList>
+                                    <Loc EndOffset="157" SrcFileId="1" StartOffset="148"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <BasicStmnt CovItemId="S2" CovItemPrefix="exe4.Balance.java" Intrnl_Id="15">
+                                <LocList>
+                                    <Loc EndOffset="170" SrcFileId="1" StartOffset="161"/>
+                                </LocList>
+                            </BasicStmnt>
+                            <CondStmnt CovItemId="S3" CovItemPrefix="exe4.Balance.java" Intrnl_Id="16">
+                                <Branch CovItemId="B1" CovItemPrefix="exe4.Balance.java" Implct="false" Intrnl_Id="17">
+                                    <Cond/>
+                                    <LocList>
+                                        <Loc EndOffset="235" SrcFileId="1" StartOffset="223"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="18">
+                                        <LocList>
+                                            <Loc EndOffset="235" SrcFileId="1" StartOffset="223"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S4" CovItemPrefix="exe4.Balance.java" Intrnl_Id="19">
+                                            <LocList>
+                                                <Loc EndOffset="235" SrcFileId="1" StartOffset="223"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Branch CovItemId="B2" CovItemPrefix="exe4.Balance.java" Implct="false" Intrnl_Id="20">
+                                    <Cond>
+                                        <Loc EndOffset="243" SrcFileId="1" StartOffset="239"/>
+                                    </Cond>
+                                    <LocList>
+                                        <Loc EndOffset="271" SrcFileId="1" StartOffset="247"/>
+                                    </LocList>
+                                    <StmntSeq Intrnl_Id="21">
+                                        <LocList>
+                                            <Loc EndOffset="266" SrcFileId="1" StartOffset="253"/>
+                                        </LocList>
+                                        <BasicStmnt CovItemId="S5" CovItemPrefix="exe4.Balance.java" Intrnl_Id="22">
+                                            <LocList>
+                                                <Loc EndOffset="266" SrcFileId="1" StartOffset="253"/>
+                                            </LocList>
+                                        </BasicStmnt>
+                                    </StmntSeq>
+                                </Branch>
+                                <Keyword EndOffset="180" SrcFileId="1" StartOffset="178"/>
+                                <LocList>
+                                    <Loc EndOffset="271" SrcFileId="1" StartOffset="178"/>
+                                </LocList>
+                                <RootTerm CovItemId="C1" CovItemPrefix="exe4.Balance.java" Intrnl_Id="23">
+                                    <OpTerm BooleanOpId="3" Intrnl_Id="24">
+                                        <OpTerm BooleanOpId="2" Intrnl_Id="25">
+                                            <BasicBoolTerm Intrnl_Id="26">
+                                                <LocList>
+                                                    <Loc EndOffset="185" SrcFileId="1" StartOffset="182"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <BasicBoolTerm Intrnl_Id="27">
+                                                <LocList>
+                                                    <Loc EndOffset="195" SrcFileId="1" StartOffset="189"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <LocList>
+                                                <Loc EndOffset="188" SrcFileId="1" StartOffset="186"/>
+                                            </LocList>
+                                        </OpTerm>
+                                        <OpTerm BooleanOpId="2" Intrnl_Id="28">
+                                            <BasicBoolTerm Intrnl_Id="29">
+                                                <LocList>
+                                                    <Loc EndOffset="205" SrcFileId="1" StartOffset="201"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <BasicBoolTerm Intrnl_Id="30">
+                                                <LocList>
+                                                    <Loc EndOffset="216" SrcFileId="1" StartOffset="209"/>
+                                                </LocList>
+                                            </BasicBoolTerm>
+                                            <LocList>
+                                                <Loc EndOffset="208" SrcFileId="1" StartOffset="206"/>
+                                            </LocList>
+                                        </OpTerm>
+                                        <LocList>
+                                            <Loc EndOffset="199" SrcFileId="1" StartOffset="197"/>
+                                        </LocList>
+                                    </OpTerm>
+                                </RootTerm>
+                            </CondStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="25" HierarchyLvlTypeId="5" Intrnl_Id="31" Name="getP">
+                        <Header>
+                            <Loc EndOffset="299" SrcFileId="1" StartOffset="282"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="317" SrcFileId="1" StartOffset="282"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="32">
+                            <LocList>
+                                <Loc EndOffset="313" SrcFileId="1" StartOffset="304"/>
+                            </LocList>
+                            <BasicStmnt CovItemId="S6" CovItemPrefix="exe4.Balance.java" Intrnl_Id="33">
+                                <LocList>
+                                    <Loc EndOffset="313" SrcFileId="1" StartOffset="304"/>
+                                </LocList>
+                            </BasicStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                    <HierarchyLvl HierarchyLvlId="26" HierarchyLvlTypeId="5" Intrnl_Id="34" Name="getW">
+                        <Header>
+                            <Loc EndOffset="340" SrcFileId="1" StartOffset="323"/>
+                        </Header>
+                        <LocList>
+                            <Loc EndOffset="358" SrcFileId="1" StartOffset="323"/>
+                        </LocList>
+                        <StmntSeq Intrnl_Id="35">
+                            <LocList>
+                                <Loc EndOffset="354" SrcFileId="1" StartOffset="345"/>
+                            </LocList>
+                            <BasicStmnt CovItemId="S7" CovItemPrefix="exe4.Balance.java" Intrnl_Id="36">
+                                <LocList>
+                                    <Loc EndOffset="354" SrcFileId="1" StartOffset="345"/>
+                                </LocList>
+                            </BasicStmnt>
+                        </StmntSeq>
+                    </HierarchyLvl>
+                </HierarchyLvl>
+            </HierarchyLvl>
+        </HierarchyLvl>
+    </MASTRoot>
+</TestSessionContainer>
