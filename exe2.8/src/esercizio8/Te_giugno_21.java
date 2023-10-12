@@ -23,6 +23,7 @@ public class Te_giugno_21 {
 		// if semplificato dalla precondizione del contratto 
 		//if (a != null && a.length > 0) { 
 			//@ loop_invariant i>=0 && i<=a.length;
+		// mettere ancora la condizione se e solo se di result !
 			for (int i=0;i < a.length ; i++) {
 				if (a[i] > b && (a[i] % 2 == 0)) 
 					return true;
